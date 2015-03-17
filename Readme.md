@@ -1,9 +1,9 @@
 # Chez Felix
 
-## Instals slim
+## Install slim
 gem install slim
 
-## Instals dependencies
+## Install dependencies
 npm install
 bower install
 
