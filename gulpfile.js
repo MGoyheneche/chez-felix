@@ -4,6 +4,13 @@ var less = require('gulp-less');
 var path = require('path');
 var slim = require('gulp-slim');
 var connect = require('gulp-connect');
+var del = require('del');
+
+gulp.task('clean', function () {
+  del(['./dist'], function (err, deletedFiles) {
+      console.log('Files deleted:', deletedFiles.join(', '));
+  });
+});
 
 gulp.task('less', function () {
   return gulp.src('./src/less/main.less')
@@ -18,8 +25,7 @@ gulp.task('slim', function(){
     .pipe(slim({
       pretty: true
     }))
-    .pipe(gulp.dest('./dist/'))
-    .pipe(connect.reload());
+    .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('connect', function() {
