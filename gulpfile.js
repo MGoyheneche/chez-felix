@@ -2,7 +2,7 @@ var gulp = require('gulp');
 
 var less = require('gulp-less');
 var path = require('path');
-var slim = require('gulp-slim');
+var jade = require('gulp-jade');
 var connect = require('gulp-connect');
 var del = require('del');
 
@@ -20,12 +20,12 @@ gulp.task('less', function () {
     .pipe(gulp.dest('./dist/style/'));
 });
 
-gulp.task('slim', function(){
-  gulp.src('./src/**/*.slim')
-    .pipe(slim({
+gulp.task('jade', function() {
+  gulp.src('./src/*.jade')
+    .pipe(jade({
       pretty: true
     }))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('connect', function() {
@@ -45,4 +45,4 @@ gulp.task('watch', function () {
   gulp.watch(['./dest/'], ['reload']);
 });
 
-gulp.task('default', ['slim', 'less', 'watch', 'connect']);
+gulp.task('default', ['jade', 'less', 'watch', 'connect']);
