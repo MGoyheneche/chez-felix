@@ -1,0 +1,74 @@
+header.container
+  .row
+    .location.col-sm-4.hidden-xs
+      p
+        | 4, rue Cancoillote
+        br/
+        | XX
+        sup ème
+        |  arrondissement
+        br/
+        | 75001 Paris
+
+    .logotype.col-sm-4
+      a(href="#")
+        img(src="http://placehold.it/150x150", alt="Chez Felix - logotype")
+
+    .schedule.col-sm-4.hidden-xs
+      p
+        | Du mardi au jeudi: 11h - 15h, 19h - 23h
+        br/
+        | Du vendredi au dimanche : 11h - 1h
+        br/
+        | Fermé le lundi
+
+    .shop-status.col-sm-4.visible-xs
+      p.
+        Ouvert jusqu'à 23h
+
+  .row
+    .map.col-xs-12.visible-xs
+      #map-canvas
+      .col-xs-offset-4.col-xs-3.text-center
+        a.btn.btn-lg.btn-primary.itinerary(src='#') Itinéraire
+
+  .row
+    nav.text-center.hidden-xs
+      ul.nav.nav-pills.centered-pills
+        li.active
+          a(href="#") Home
+        li
+          a(href="#") Fromages
+        li
+          a(href="#") Plats
+        li
+          a(href="#") Blog
+        li
+          a(href="#") Contact
+  
+  .row
+    nav.navbar.navbar-default.navbar-fixed-top.visible-xs
+      .container-fluid
+        <!-- Brand and toggle get grouped for better mobile display -->
+        .navbar-header
+          button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+              
+          a.btn.btn-default(href="#") Horaires
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href="#") Home
+            li
+              a(href="#") Fromages
+            li
+              a(href="#") Plats
+            li
+              a(href="#") Blog
+            li
+              a(href="#") Contact
