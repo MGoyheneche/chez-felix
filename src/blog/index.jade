@@ -1,0 +1,56 @@
+doctype html
+html(lang="en")
+    head
+        title Chez Felix - Blog
+        include ../config-head.jade
+        link(rel="stylesheet", type="text/css", href="/style/blog.css")
+        script(type='text/javascript', src='/js/jquery.js')
+        script(type='text/javascript', src='/js/dropdown.js')
+
+    body
+        include ../header.jade
+        
+        .container.marge-bot-30
+            .row
+                h1.text-center.marge-bot-30 BLOG
+            .row.text-center
+                .btn-group
+                    a.btn.btn-default.btn-lg.dropdown-toggle(data-toggle="dropdown", aria-expanded="false", type="button") Affiner 
+                        span.caret
+                    ul.dropdown-menu(role="menu")
+                        li
+                            a.btn-lg(href="") Sorties
+                        li
+                            a.btn-lg(href="") Fromages
+                        li
+                            a.btn-lg(href="") Coup de cœur
+        .container
+            .row
+                span.col-xs-8 Ma Douce Street
+                span.text-right.col-xs-4 19 Mars
+            .row.marge-bot-15
+                span.col-xs-8 Tatiana Iglov
+                span.text-right.col-xs-4 22 Avril
+            .row
+                #article1.col-xs-12.marge-bot-15
+                    .article-label.text-right Photographie
+            .marge-bot-15
+                | Venez découvrir pendant les douces journées ensoleillés, notre artise aux multiples facettes.. <br>
+            a.btn.btn-default.pull-right.marge-bot-30(href="") Lire la suite
+            .article-separate.marge-bot-30.col-xs-6.col-xs-offset-3
+        
+        .container
+            .row
+                span.col-xs-8 Ma Douce Street
+                span.text-right.col-xs-4 19 Mars
+            .row.marge-bot-15
+                span.col-xs-8 Tatiana Iglov
+                span.text-right.col-xs-4 22 Avril
+            .row
+                #article1.col-xs-12.marge-bot-15
+                    .article-label.text-right Photographie
+            .marge-bot-15
+                | Venez découvrir pendant les douces journées ensoleillés, notre artise aux multiples facettes.. <br>
+            a.btn.btn-default.pull-right.marge-bot-30(href="") Lire la suite
+            .article-separate.marge-bot-30.col-xs-8.col-xs-offset-2
+        include ../footer.jade
