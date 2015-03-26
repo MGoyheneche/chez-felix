@@ -1,3 +1,5 @@
+include ./template.jade
+
 doctype html
 html(lang="en")
     head
@@ -14,43 +16,31 @@ html(lang="en")
             .row
                 h1.text-center.marge-bot-30 BLOG
             .row.text-center
-                .btn-group
+                .dropdown
                     a.btn.btn-default.btn-lg.dropdown-toggle(data-toggle="dropdown", aria-expanded="false", type="button") Affiner 
                         span.caret
-                    ul.dropdown-menu(role="menu")
+                    ul.dropdown-menu.filter(role="menu")
                         li
-                            a.btn-lg(href="") Sorties
+                            a(href="") Sorties
+                        li.divider
                         li
-                            a.btn-lg(href="") Fromages
+                            a(href="") Fromages
+                        li.divider
                         li
-                            a.btn-lg(href="") Coup de cœur
+                            a(href="") Coup de cœur
         .container
-            .row
-                span.col-xs-8 Ma Douce Street
-                span.text-right.col-xs-4 19 Mars
-            .row.marge-bot-15
-                span.col-xs-8 Tatiana Iglov
-                span.text-right.col-xs-4 22 Avril
-            .row
-                #article1.col-xs-12.marge-bot-15
-                    .article-label.text-right Photographie
-            .marge-bot-15
-                | Venez découvrir pendant les douces journées ensoleillés, notre artise aux multiples facettes.. <br>
-            a.btn.btn-default.pull-right.marge-bot-30(href="") Lire la suite
-            .article-separate.marge-bot-30.col-xs-6.col-xs-offset-3
-        
-        .container
-            .row
-                span.col-xs-8 Ma Douce Street
-                span.text-right.col-xs-4 19 Mars
-            .row.marge-bot-15
-                span.col-xs-8 Tatiana Iglov
-                span.text-right.col-xs-4 22 Avril
-            .row
-                #article1.col-xs-12.marge-bot-15
-                    .article-label.text-right Photographie
-            .marge-bot-15
-                | Venez découvrir pendant les douces journées ensoleillés, notre artise aux multiples facettes.. <br>
-            a.btn.btn-default.pull-right.marge-bot-30(href="") Lire la suite
-            .article-separate.marge-bot-30.col-xs-8.col-xs-offset-2
+            +articleList(   "Ma Douce Ville", "Tatiana Iglov", "19 Mars", "22 Avril", "Photographie", 
+                            "Venez découvrir pendant les douces journées ensoleillés, notre artiste aux multiples facettes..", 
+                            "http://www.lesalondelaphoto.com/var/comexposium/storage/images/media/salon-de-la-photo-medias/images/"+
+                            "suivre-le-salon-de-la-photo-sur-les-reseaux-sociaux/1482353-1-fre-FR/Suivre-le-Salon-de-la-photo-sur-les-reseaux-sociaux_Tuile_980x430.jpg","#")
+                        
+            +articleList(   "Mon blues écarlate", "Jessie Pinkman", "12 Mars", "30 Avril", "Musique", 
+                            "Jessie Pinkman est le phénomène de ces deux dernièrs mois. Il est l'homme phare du Jazzy-blues..", 
+                            "http://www.nycguitarschool.com/wp-content/uploads/2013/03/bluesguitar.jpg","#")
+                        
+            +articleList(   "La fleur automnale", "Maître Roche", "12 Janvier", "", "Fromage", 
+                            "Maître Roche nous fait parvenir l'un des plus précieux fromage de Lorraine, le Loraifort. A cet effet, il nous en fait le récit de son histoire"+
+                            "et de son goût si particulier.. ", 
+                            "http://www.tourisme-aveyron.com/fr/decouvrir/incontournables/images/bandeau/roquefort/Photo-3.jpg","#")
+                        
         include ../footer.jade

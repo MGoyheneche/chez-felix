@@ -1,0 +1,16 @@
+mixin articleList(title, author, start, end, label, resume, photo_url, article_url)
+    .row.marge-bot-15
+        .col-xs-8
+            div.article-title= title
+            div.article-author= author
+        .col-xs-4.text-right
+            if start
+                div.article-date= start
+            if end
+                div.article-date= end
+    .row
+        .article-bg.col-xs-12.marge-bot-15(style!="background-image: url("+photo_url+")")
+            .article-label.col-xs-12= label
+    .marge-bot-15.article-resume= resume
+    a.btn.btn-primary.btn-default.pull-right.marge-bot-30(href=article_url) Lire la suite
+    .article-separate.marge-bot-30.col-xs-6.col-xs-offset-3
