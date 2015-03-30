@@ -1,0 +1,53 @@
+include template.jade
+
+extends ../shared/layout.jade
+
+block title 
+  title Chez Felix - Blog
+block content
+  .container.marge-bot-30
+    .row
+      h1.text-center.marge-bot-30 BLOG
+  .container
+    +article( {
+                title:"Ma douce Ville",
+                author:"Tatiana Iglov",
+                start:"19 Avril",
+                end:"22 Juin",
+                label:"Photographie",
+                resume:[ "Tatiana Iglov née à Moscou est une artiste aux mutltiples facettes. Elle a entretenue un lien étroit pendant 15 ans entre street art est sociologie intra continent. C’est au cours de sa formation universitaire que Tatiana va mettre en place les bases de sa sensibilité artistique. Elle développe une réflexion qui se porte sur la notion des limites du cadre photographique qui l’amènera plus tard à utiliser la vidéo dans lesquelles l'Homme sera présenté comme élément perturbateur de l'équilibre parfait des images filmées.",
+                        "Ces expérimentations la conduiront sur les thématiques de l’intimité photographique et au rapport induit entre la production et la destination de ses images. Ces notions ne quitteront dès lors plus jamais son travail. O.Z.",
+                          "Elle a exploré l'Amérique du Sud, l'Afrique, l'Europe, l'Inde et l'Océanie, en quête d'art urbain. Cette Talentueuse artiste nous fera l'honneur d'être présente le 12 et 13 avril entre 14h et 20h.",
+                        " Nous aurons le plaisir de vous exposer pas moins de 5 series pour un total de 30 photographies étonnantes et très intstructives.",
+                ],
+                photos: [ 
+                  {
+                    url: "http://iuryido.lisaa-labo.com/files/2013/10/les-rails-photographie-montes-virginie.jpg",
+                    label:"Nos voies",
+                    resume:"Banlieue Sud Akpouktou"
+                  },
+                  {
+                    url: "http://1.bp.blogspot.com/-4-TvIQ4pTTs/UL2phmFzDRI/AAAAAAAAAaI/SE12RLqutmQ/s1600/Stalingrad.jpg  ",
+                    label:"Autobio",
+                    resume:"Tatiana et moi, Inde"
+                  },
+                  {
+                    url: "http://www.lesphotographes.com/wp-content/uploads/2011/03/9.jpg",
+                    label:"Techétchénie",
+                    resume:"Champs de bataille"
+                  }
+                ],
+                publication_info:{
+                  author: "Alexis Oblet",
+                  //timestamp if prod
+                  parution: {
+                    date:"02/02/15",
+                    hour:"18h20",
+                  },
+                  maj: {
+                    date:"05/02/2015",
+                    hour:"19h50"
+                  }
+                }
+              })
+
