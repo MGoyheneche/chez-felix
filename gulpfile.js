@@ -21,7 +21,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('jade', function() {
-  gulp.src('./src/**/*.jade')
+  gulp.src('./src/jade/**/*.jade')
     .pipe(jade({
       pretty: true
     }))
@@ -39,18 +39,14 @@ gulp.task('reload', function () {
   gulp.src(['./build/**/*.html']).pipe(connect.reload());
 });
 
-gulp.task('js', function(){  
-  return gulp.src([
-      './client/bower_components/jquery/dist/jquery.js',
-			'./client/bower_components/bootstrap/js/dropdown.js'
-
-    ])
-    .pipe(gulp.dest("./build/js"));
+gulp.task('copy', function() {
+   gulp.src('./src/bower_components/**/*.*')
+   .pipe(gulp.dest('./build/vendors/'));
 });
 
 gulp.task('watch', function () {
-  gulp.watch(['./src/**/*.jade'], ['jade']);
-  gulp.watch(['./src/**/*.less'], ['less']);
+  gulp.watch(['./src/jade/**/*.jade'], ['jade']);
+  gulp.watch(['./src/less/**/*.less'], ['less']);
   gulp.watch(
     [
       './build/**/*.html',
@@ -60,4 +56,4 @@ gulp.task('watch', function () {
     ['reload']);
 });
 
-gulp.task('default', ['jade', 'less', 'js', 'watch', 'connect']);
+gulp.task('default', ['jade', 'less', 'copy', 'watch', 'connect']);
