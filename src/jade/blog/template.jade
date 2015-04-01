@@ -1,81 +1,85 @@
 mixin articleList(arg)
-  each val in arg
-    .row.marge-bot-15
-      .col-xs-8
-        div.article-list-title= val.title
-        div.article-list-author= val.author
-      .col-xs-4.text-right
-        if val.start
-          div.article-list-date= val.start
-        if val.end
-          div.article-list-date= val.end
-    .row
-      .article-list-bg.col-xs-12.marge-bot-15(style!="background-image: url("+val.photo_url+")")
-        .article-list-label.col-xs-12= val.label
-      .col-xs-12.marge-bot-15.article-list-resume= val.resume
-      .col-xs-12
-        a.btn.btn-primary.btn-default.pull-right.marge-bot-30(href="article.html") Lire la suite
-      .article-list-separate.marge-bot-30.col-xs-6.col-xs-offset-3
-    
+  //just for dev purposes
+  .row
+    each _ in [0,0]
+      each val in arg
+        .col-xs-12.col-sm-6.col-md-4.mb-30.nopadding
+          .col-xs-12.mb-45
+            .article-list-bg.col-xs-12.mb-30(style!="background-image: url("+val.photo_url+")")
+              .article-list-label.col-xs-12= val.label
+            .mb-15.article-list-resume= val.resume
+            a.btn.btn-default.pull-right.mb-30(href="article.html") Lire la suite
+//            .col-xs-8.mb-15
+//            div.article-list-title= val.title
+//            div.article-list-author= val.author
+//          .col-xs-4.text-right
+//            if val.start
+//              div.article-list-date= val.start
+//            if val.end
+//              div.article-list-date= val.end
+
 mixin test(arr)
   each val in arr
     p #{val.a}
         
 mixin article(arg)
-  .row.marge-bot-15
-    .col-xs-8
-      div.article-title= arg.title
-      div.article-author= arg.author
-    .col-xs-4.text-right
-      if arg.start
-        div.article-date= arg.start
-      if arg.end
-        div.article-date= arg.end
-  .row.marge-bot-30
-    #carousel-article.carousel.slide(data-ride='carousel', data-interval="3000")
-      // Indicators
-      ol.carousel-indicators
-        - var classItem = "active";
-        each val, i in arg.photos
-          if i > 0
-            - classItem=""
-          li(class=classItem, data-target='#carousel-article', data-slide-to=i) 
+  .container
+    .row.mb-15
+      .col-xs-8.col-sm-5.col-sm-offset-1
+        div.article-title= arg.title
+        div.article-author= arg.author
+      .col-xs-4.col-sm-5.text-right
+        if arg.start
+          div.article-date= arg.start
+        if arg.end
+          div.article-date= arg.end
+  .container-fluid.fill
+    .row.mb-30
+      #carousel-article.carousel.slide(data-ride='carousel', data-interval="3000")
+        // Indicators
+        ol.carousel-indicators
+          - var classItem = "active";
+          each val, i in arg.photos
+            if i > 0
+              - classItem=""
+            li(class=classItem, data-target='#carousel-article', data-slide-to=i) 
+            
+        // Wrapper for slides
+        .carousel-inner(role='listbox')
+          .article-label.col-xs-12.visible-xs= arg.label
 
-      // Wrapper for slides
-      .carousel-inner(role='listbox')
-        - var classItem = "active";
+          - var classItem = "active";
           each val, i in arg.photos
             if i > 0
               - classItem=""
             .item(class=classItem)
-              img.img-responsive.center-block(src=val.url, alt="photo blog")
+              .fill(style="background-image:url(#{val.url}")
               .carousel-caption 
                 h1 #{val.label}
                 p #{val.resume}
-          .article-label.col-xs-12= arg.label
+        // Controls
+        a.left.carousel-control(href='#carousel-article', role='button', data-slide='prev')
+          span.glyphicon.glyphicon-chevron-left
+          span.sr-only Previous
+        a.right.carousel-control(href='#carousel-article', role='button', data-slide='next')
+          span.glyphicon.glyphicon-chevron-right
+          span.sr-only Next
 
-      // Controls
-      a.left.carousel-control(href='#carousel-article', role='button', data-slide='prev')
-        span.glyphicon.glyphicon-chevron-left
-        span.sr-only Previous
-      a.right.carousel-control(href='#carousel-article', role='button', data-slide='next')
-        span.glyphicon.glyphicon-chevron-right
-        span.sr-only Next
-        
-  .row.marge-bot-15
-    .col-xs-6
-      div Posté le 
-        span.article-date #{arg.publication_info.parution.date}
-      div 
-        span.article-hour #{arg.publication_info.parution.hour}
-    .col-xs-6.text-right
-      div #{arg.publication_info.author}
-  .row
-    .col-xs-12 
+  .container
+    .row.mb-30
+      .col-xs-6.col-sm-5.col-sm-offset-1
+        div Posté le 
+          span.article-date #{arg.publication_info.parution.date}
+        div 
+          span.article-hour #{arg.publication_info.parution.hour}
+      .col-xs-6.col-sm-5.text-right.article-author
+        div #{arg.publication_info.author}
+    .row
       each val in arg.resume
-        p.marge-bot-30 #{val}
-        
-  .row.marge-bot-30
-    .col-xs-12.text-right
-      div Mise à jour le
-      div #{arg.publication_info.maj.date} - #{arg.publication_info.maj.hour}
+        .col-xs-12.col-sm-10.col-sm-offset-1
+          p.mb-30 #{val}
+
+    .row.mb-30
+      .col-xs-12.col-sm-10.col-sm-offset-1.text-right
+        div Mise à jour le
+        div #{arg.publication_info.maj.date} - #{arg.publication_info.maj.hour}

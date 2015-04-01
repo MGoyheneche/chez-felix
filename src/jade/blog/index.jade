@@ -4,15 +4,15 @@ extends ./../shared/layout
 block title
   title Chez Felix - Blog
 
-block content   
-  .container.marge-bot-30
+block content
+  .container.mb-30
     .row
-      h1.text-center.marge-bot-30 BLOG
+      h1.text-center.mb-30 BLOG
     .row.text-center
-      .dropdown
+      .dropdown.visible-xs
         a.btn.btn-default.btn-lg.dropdown-toggle(data-toggle="dropdown", aria-expanded="false", type="button") Affiner 
           span.caret
-        ul.dropdown-menu.filter(role="menu")
+        ul.dropdown-menu.filter.col-xs-6(role="menu")
           li
             a(href="") Sorties
           li.divider
@@ -21,6 +21,14 @@ block content
           li.divider
           li
             a(href="") Coup de cœur
+    .row.visible-sm
+      .col-sm-4
+          a.btn.btn-block.btn-default(href='') Sorties 
+      .col-sm-4
+          a.btn.btn-block.btn-default(href='') Fromages 
+      .col-sm-4
+          a.btn.btn-block.btn-default(href='') Coup de coeur 
+          
   .container
     +articleList([{
                     title:"Ma douce Ville",
@@ -32,7 +40,8 @@ block content
                     photo_url:"http://www.lesalondelaphoto.com/var/comexposium/storage/images/media/salon-de-la-photo-medias/images/"+
                               "suivre-le-salon-de-la-photo-sur-les-reseaux-sociaux/1482353-1-fre-FR/Suivre-le-Salon-de-la-photo-sur-"+
                               "les-reseaux-sociaux_Tuile_980x430.jpg",
-                    article_url:"#"
+                    article_url:"#",
+                    parution_date:"10/01/15"
                   },
                   {
                     title:"Mon blues écarlate",
@@ -42,7 +51,8 @@ block content
                     resume:"Jessie Pinkman est le phénomène de ces deux dernièrs mois. Il est l'homme phare du Jazzy-blues..",
                     label:"Musique",
                     photo_url:"http://www.nycguitarschool.com/wp-content/uploads/2013/03/bluesguitar.jpg",
-                    article_url:"#"
+                    article_url:"#",
+                    parution_date:"10/02/15"
                   },
                   {
                     title:"La fleur automnale",
@@ -53,6 +63,8 @@ block content
                            ", il nous fait le récit de sont histoire et de son goût si particulier",
                     label:"Fromage",
                     photo_url:"http://www.tourisme-aveyron.com/fr/decouvrir/incontournables/images/bandeau/roquefort/Photo-3.jpg",
-                    article_url:"#"
+                    article_url:"#",
+                    parution_date:"10/01/15"
+
                   }
                 ])

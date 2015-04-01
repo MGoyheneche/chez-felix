@@ -4,12 +4,13 @@ extends ../shared/layout.jade
 
 block title 
   title Chez Felix - Blog
+  
 block content
-  .container.marge-bot-30
+  .container.mb-30
     .row
-      h1.text-center.marge-bot-30 BLOG
-  .container
-    +article( {
+      h1.text-center.mb-30 BLOG
+  
+  +article( {
                 title:"Ma douce Ville",
                 author:"Tatiana Iglov",
                 start:"19 Avril",
@@ -49,5 +50,4 @@ block content
                     hour:"19h50"
                   }
                 }
-              })
-
+              })    
