@@ -1,0 +1,14 @@
+mixin fromage(title, img, milk, dough, location, maker, description)
+  article.col-md-6
+    .panel.panel-default
+      .panel-heading
+        .cover
+          img(src=img)
+      .panel-body
+        .content
+          h1= title
+          .milk= milk
+          .dough= dough
+          .location= location
+          .maker= maker
+          p= description
