@@ -7,7 +7,8 @@ block title
 block content
   .container.mb-30
     .row
-      h1.text-center.mb-30 BLOG
+      h1.text-center.mb-30 
+        a.link-reset(href="/blog/") BLOG
     .row.text-center
       .dropdown.visible-xs
         a.btn.btn-default.btn-lg.dropdown-toggle(data-toggle="dropdown", aria-expanded="false", type="button") Affiner 
@@ -33,8 +34,8 @@ block content
     +articleList([{
                     title:"Ma douce Ville",
                     author:"Tatiana Iglov",
-                    start:"19 Mars",
-                    end:"19 Avril",
+                    start:"19/03",
+                    end:"19/04",
                     resume:"Venez découvrir pendant les douces journées ensoleillés, notre artiste aux multiples facettes..",
                     label:"Photographie",
                     photo_url:"http://www.lesalondelaphoto.com/var/comexposium/storage/images/media/salon-de-la-photo-medias/images/"+
@@ -46,8 +47,8 @@ block content
                   {
                     title:"Mon blues écarlate",
                     author:"Jessie Pinkman",
-                    start:"12 Mars",
-                    end:"30 Avril",
+                    start:"12/03",
+                    end:"30/05",
                     resume:"Jessie Pinkman est le phénomène de ces deux dernièrs mois. Il est l'homme phare du Jazzy-blues..",
                     label:"Musique",
                     photo_url:"http://www.nycguitarschool.com/wp-content/uploads/2013/03/bluesguitar.jpg",
@@ -57,10 +58,10 @@ block content
                   {
                     title:"La fleur automnale",
                     author:"Maitre Roche",
-                    start:"12 Janvier",
+                    start:"12/01",
                     end:"",
                     resume:"Maitre Roche nous fait parvenir l'un des plus précieux fromage de Lorraine, le Loraifort. A cet effet"+
-                           ", il nous fait le récit de sont histoire et de son goût si particulier",
+                           "...",
                     label:"Fromage",
                     photo_url:"http://www.tourisme-aveyron.com/fr/decouvrir/incontournables/images/bandeau/roquefort/Photo-3.jpg",
                     article_url:"#",

@@ -3,20 +3,23 @@ mixin articleList(arg)
   .row
     each _ in [0,0]
       each val in arg
-        .col-xs-12.col-sm-6.col-md-4.mb-30.nopadding
-          .col-xs-12.mb-45
+        .col-xs-12.col-sm-6.col-md-4.mb-30
+          .mb-45
             .article-list-bg.col-xs-12.mb-30(style!="background-image: url("+val.photo_url+")")
               .article-list-label.col-xs-12= val.label
-            .mb-15.article-list-resume= val.resume
+            .row.mb-15
+              .col-xs-8
+                div.article-list-title= val.title
+                div.article-list-author= val.author
+              .col-xs-4.text-right
+                if val.start
+                  span.article-list-date= val.start
+                    if val.start && val.end
+                      | -
+                if val.end
+                  span.article-list-date= val.end
+            .mb-30.article-list-resume= val.resume
             a.btn.btn-default.pull-right.mb-30(href="article.html") Lire la suite
-//            .col-xs-8.mb-15
-//            div.article-list-title= val.title
-//            div.article-list-author= val.author
-//          .col-xs-4.text-right
-//            if val.start
-//              div.article-list-date= val.start
-//            if val.end
-//              div.article-list-date= val.end
 
 mixin test(arr)
   each val in arr
