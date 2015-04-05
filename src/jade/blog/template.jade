@@ -84,10 +84,12 @@ mixin article(arg)
       each val,i in arg.resume
         .col-xs-12.col-sm-10.col-sm-offset-1
           if i == 0
+            h2.mb-30 Bio <small>graphie</small>
             .article-illu.hidden-xs
           if i == 2
+            h2.mb-30 Chemin <small>artistique</small>
             img.article-illu-map.hidden-xs
-          p.mb-30 #{val}
+          p.mb-30(style='text-align:justify') #{val}
     .row.mb-30
       .col-xs-12.col-sm-10.col-sm-offset-1.text-right
         .article-maj Mise à jour le
