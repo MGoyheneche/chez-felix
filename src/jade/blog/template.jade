@@ -31,10 +31,10 @@ mixin test(arr)
 mixin article(arg)
   .container
     .row.mb-15
-      .col-xs-8.col-sm-5.col-sm-offset-1
+      .col-xs-8.col-sm-5.col-sm-offset-1.col-md-4.col-md-offset-2
         div.article-title= arg.title
         div.article-author= arg.author
-      .col-xs-4.col-sm-5.text-right
+      .col-xs-4.col-sm-5.text-right.col-md-4.col-md-offset-2
         if arg.start
           div.article-date= arg.start
         if arg.end
@@ -47,16 +47,16 @@ mixin article(arg)
       })      
   .container
     .row.mb-30
-      .col-xs-6.col-sm-5.col-sm-offset-1
+      .col-xs-6.col-sm-5.col-sm-offset-1.col-md-4.col-md-offset-2
         div Posté le 
           span.article-date #{arg.publication_info.parution.date}
         div 
           span.article-hour #{arg.publication_info.parution.hour}
-      .col-xs-6.col-sm-5.text-right.article-author
+      .col-xs-6.col-sm-5.text-right.article-author.col-md-4
         div #{arg.publication_info.author}
     .row
       each val,i in arg.resume
-        .col-xs-12.col-sm-10.col-sm-offset-1
+        .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
           if i == 0
             h2.mb-30 Bio <small>graphie</small>
             .article-illu.hidden-xs
@@ -65,7 +65,7 @@ mixin article(arg)
             img.article-illu-map.hidden-xs
           p.mb-30(style='text-align:justify') #{val}
     .row.mb-30
-      .col-xs-12.col-sm-10.col-sm-offset-1.text-right
+      .col-xs-12.col-sm-10.col-sm-offset-1.text-right.col-md-8.col-md-offset-2
         .article-maj Mise à jour le
         .article-maj #{arg.publication_info.maj.date} - #{arg.publication_info.maj.hour}
         
