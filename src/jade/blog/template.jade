@@ -41,36 +41,10 @@ mixin article(arg)
           div.article-date= arg.end
   .container-fluid
     .row.mb-30
-      #carousel-article.carousel.slide(data-ride='carousel', data-interval="3000")
-        // Indicators
-        ol.carousel-indicators
-          - var classItem = "active";
-          each val, i in arg.photos
-            if i > 0
-              - classItem=""
-            li(class=classItem, data-target='#carousel-article', data-slide-to=i) 
-            
-        // Wrapper for slides
-        .carousel-inner(role='listbox')
-          .article-label= arg.label
-
-          - var classItem = "active";
-          each val, i in arg.photos
-            if i > 0
-              - classItem=""
-            .item(class=classItem)
-              .fill(style="background-image:url(#{val.url}")
-              .carousel-caption 
-                h1 #{val.label}
-                p #{val.resume}
-        // Controls
-        a.left.carousel-control(href='#carousel-article', role='button', data-slide='prev')
-          span.glyphicon.glyphicon-chevron-left
-          span.sr-only Previous
-        a.right.carousel-control(href='#carousel-article', role='button', data-slide='next')
-          span.glyphicon.glyphicon-chevron-right
-          span.sr-only Next
-
+      +carousel({
+        id:"preview",
+        photos: arg.photos
+      })      
   .container
     .row.mb-30
       .col-xs-6.col-sm-5.col-sm-offset-1
@@ -94,3 +68,78 @@ mixin article(arg)
       .col-xs-12.col-sm-10.col-sm-offset-1.text-right
         .article-maj Mise à jour le
         .article-maj #{arg.publication_info.maj.date} - #{arg.publication_info.maj.hour}
+        
+    .row.mb-30.hidden-xs.text-center
+      h3.mb-30 Dernières publications
+      .col-sm-4
+        .article-list-label Musique
+        .last-articles.last1
+          +carousel({
+            id:'last1',
+            photos: [ 
+              {url: "http://img0.mxstatic.com/wallpapers/8edf0a81c753381ad708ddf6836d7135_large.jpeg"},
+              {url: "http://www.ardeche.com/ou-sortir/image/627625.jpg"},
+              {url: "http://www.montpellier.fr/uploads/Image/a9/17061_571_Culture-Fete_musique.jpg"}
+            ],
+            isLastArticles: true
+          })
+      .col-sm-4
+        .article-list-label Peinture
+        .last-articles.last2 
+          +carousel({
+            id:'last2',
+            photos: [ 
+              {url: "http://s011.radikal.ru/i318/1011/3e/5efe1aaf6c51.jpg"},
+              {url: "http://pijet.com/wp-content/gallery/la-serenissima-project/La_Serenissima.jpg"},
+              {url: "http://www.connaissancedesarts.com/medias/2011/12/20/93272_1324398073_vries.jpg"}
+            ],
+            isLastArticles: true
+          })
+      .col-sm-4
+        .article-list-label Fromage
+        .last-articles.last3
+          +carousel({
+            id:'last3',
+            photos: [ 
+              {url: "http://www.agoarts.com/images/Image/Fromage_mini_1359380807.jpg"},
+              {url: "http://www.ichetkar.fr/wp-content/gallery/pieces-montees/pieces-montee-milk-factory-ichetkar_jjpallot_diaporama_03.jpg"},
+              {url: "http://maison2.advcdn.net/images/medias/000/012/000012382/600.jpg"}
+            ],
+            isLastArticles: true
+          })
+    .row.text-center.mb-45
+      a.btn.btn-default.btn-lg(href='/blog') Blog
+      
+      
+      
+  mixin carousel(args)
+    - var classLastArticles = '';
+    if args.isLastArticles
+      - classLastArticles = 'carousel-last-articles hidden-sm hidden-xs'
+    div(class ="carousel slide #{classLastArticles}", id=args.id, data-ride='carousel', data-interval="3000")
+      // Indicators
+      ol.carousel-indicators
+        - var classItem = "active";
+        each val, i in args.photos
+          if i > 0
+            - classItem=""
+          li(class=classItem, data-target='#'+args.id, data-slide-to=i) 
+      // Wrapper for slides
+      .carousel-inner(role='listbox')
+        - var classItem = "active";
+        each val, i in args.photos
+          if i > 0
+            - classItem=""
+          .item(class=classItem)
+            .fill(style="background-image:url(#{val.url}")
+            if !args.isLastArticles
+              .carousel-caption 
+                h1 #{val.label}
+                p #{val.resume}
+      // Controls
+      a.left.carousel-control(href='#'+args.id, role='button', data-slide='prev')
+        span.glyphicon.glyphicon-chevron-left
+        span.sr-only Previous
+      a.right.carousel-control(href='#'+args.id, role='button', data-slide='next')
+        span.glyphicon.glyphicon-chevron-right
+        span.sr-only Next

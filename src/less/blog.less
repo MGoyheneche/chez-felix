@@ -72,7 +72,10 @@ html,body {
   position: absolute;
   border-radius: 2px;
   padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   color: white;
+  top:1px;
   background-color: rgba(0.5,0.5,0.5,0.7);
 }
 
@@ -190,4 +193,47 @@ html,body {
 .article-maj{
   font-size: 0.9em;
   color: gray;
+}
+
+.last-articles{
+  
+  @media screen and (min-width: @screen-sm-min){
+    min-height: 150px;
+    height: 150px;
+  } 
+  @media screen and (min-width: @screen-md-min){
+    min-height:200px;
+    height: 200px;
+  }
+  background-size: cover;
+}
+
+.last1{
+  background-image: url('http://img.over-blog-kiwi.com/0/32/11/24/201301/ob_271d197243be84016aaa3ad08f60fa9b_1-616-vinyl-hd.jpg');
+}
+
+.last2{
+  background-image: url('http://www.galerie-com.com/grand_img/0866455001206352565.jpg');
+}
+
+.last3{
+  background-image: url('http://www.tourisme-aveyron.com/fr/decouvrir/incontournables/images/bandeau/roquefort/Photo-3.jpg');
+}
+
+
+.carousel-last-articles{
+  .fill{
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position: center;
+    background-attachment: scroll;
+  }
+  opacity: 0;    
+  transition: all 0.3s ease-in-out 0s;
+
+  &:hover{
+    opacity: 1;
+    transition: all 0.3s ease-in-out 0s;
+  }
 }
