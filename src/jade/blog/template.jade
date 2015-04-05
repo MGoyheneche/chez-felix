@@ -1,25 +1,28 @@
 mixin articleList(arg)
   //just for dev purposes
   .row
-    each _ in [0,0]
-      each val in arg
-        .col-xs-12.col-sm-6.col-md-4.mb-30
-          .mb-45
-            .article-list-bg.col-xs-12.mb-30(style!="background-image: url("+val.photo_url+")")
-              .article-list-label.col-xs-12= val.label
-            .row.mb-15
-              .col-xs-8
-                div.article-list-title= val.title
-                div.article-list-author= val.author
-              .col-xs-4.text-right
-                if val.start
-                  span.article-list-date= val.start
-                    if val.start && val.end
-                      | -
-                if val.end
-                  span.article-list-date= val.end
-            .mb-30.article-list-resume= val.resume
-            a.btn.btn-default.pull-right.mb-30(href="article.html") Lire la suite
+    each val in arg
+      .col-xs-12.col-sm-6.col-md-4.mb-30
+        .mb-45
+          .article-list-bg.col-xs-12.mb-30.text-center(style!="background-image: url("+val.photo_url+")")
+            .row.text-center
+              .article-list-label= val.label
+          .row.mb-15
+            .col-xs-8
+              div.article-list-title= val.title
+              div.article-list-author= val.author
+            .col-xs-4.text-right
+              if val.start
+                span.article-list-date(title="Début dans 11 jours")= val.start
+                  if val.start && val.end
+                    | -
+              if val.end
+                span.article-list-date(title="Fin dans 3 semaines")= val.end
+          .mb-15.article-list-resume= val.resume
+          .mb-30
+            each v in val.tags
+              a.btn.btn-default.article-list-tag= v
+          a.btn.btn-default.pull-right.mb-45(href="article.html") Lire la suite
 
 mixin test(arr)
   each val in arr
@@ -36,7 +39,7 @@ mixin article(arg)
           div.article-date= arg.start
         if arg.end
           div.article-date= arg.end
-  .container-fluid.fill
+  .container-fluid
     .row.mb-30
       #carousel-article.carousel.slide(data-ride='carousel', data-interval="3000")
         // Indicators
@@ -49,7 +52,7 @@ mixin article(arg)
             
         // Wrapper for slides
         .carousel-inner(role='listbox')
-          .article-label.col-xs-12.visible-xs= arg.label
+          .article-label= arg.label
 
           - var classItem = "active";
           each val, i in arg.photos
@@ -78,11 +81,14 @@ mixin article(arg)
       .col-xs-6.col-sm-5.text-right.article-author
         div #{arg.publication_info.author}
     .row
-      each val in arg.resume
+      each val,i in arg.resume
         .col-xs-12.col-sm-10.col-sm-offset-1
+          if i == 0
+            .article-illu.hidden-xs
+          if i == 2
+            img.article-illu-map.hidden-xs
           p.mb-30 #{val}
-
     .row.mb-30
       .col-xs-12.col-sm-10.col-sm-offset-1.text-right
-        div Mise à jour le
-        div #{arg.publication_info.maj.date} - #{arg.publication_info.maj.hour}
+        .article-maj Mise à jour le
+        .article-maj #{arg.publication_info.maj.date} - #{arg.publication_info.maj.hour}

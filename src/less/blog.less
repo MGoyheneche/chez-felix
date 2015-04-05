@@ -28,10 +28,10 @@ html,body {
 }
 
 .article-list-label{
-    left: 0;
     position: absolute;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    top:25%;
+    border-radius: 2px;
+    padding: 10px;
     color: white;
     background-color: rgba(0.5,0.5,0.5,0.7);
 }
@@ -48,6 +48,9 @@ html,body {
 .article-list-date{
   color: rgba(0,0,0,0.5);
   font-size: 0.9em;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .article-list-author{
@@ -63,10 +66,12 @@ html,body {
 .article-author{
   font-style: italic;
 }
+
 .article-label{
   z-index: 1000;
   position: absolute;
-  padding: 5px;
+  border-radius: 2px;
+  padding: 10px;
   color: white;
   background-color: rgba(0.5,0.5,0.5,0.7);
 }
@@ -103,11 +108,11 @@ html,body {
     min-height: 400px;
     height: 400px;
   }
-  
+/*  
   @media screen and (min-width: @screen-md-min){
     min-height: 500px;
     height: 500px;
-  }
+  }*/
 }
 
 .carousel,.item,.active{
@@ -124,6 +129,8 @@ html,body {
   background-position:center;
   background-size:cover;
   background-attachment:fixed;
+  margin: 0;
+  padding: 0;
 }
 
 .carousel-caption {
@@ -143,4 +150,44 @@ html,body {
     text-decoration: none;
     color: black;
   }
+}
+
+
+.article-illu{
+  background-image: url("http://www.laboiteverte.fr/wp-content/uploads/2011/03/portrait-pierre-gonnord-01.jpg");
+  width: 150px;
+  height:200px;
+  float: left;
+  background-size:cover;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+
+.article-list-tag{
+  opacity: 0.7;
+  font-size: 0.8em;
+  margin-right: 10px;
+  background-color: gray;
+  color:white;
+  padding: 6px;
+  border-radius: 5px;
+  border: 0px;
+  box-shadow: 5px 5px 5px 5px;
+}
+
+.article-illu-map{
+  float: right;
+  background-image: url('https://cdn3.iconfinder.com/data/icons/ballicons-free/128/map-.png');
+  width: 90px;
+  height: 90px;
+  background-size:cover;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.article-maj{
+  font-size: 0.9em;
+  color: gray;
 }
