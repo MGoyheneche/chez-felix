@@ -75,13 +75,17 @@ mixin article(arg)
       .article-illu-expo-sub.col-sm-4(style="background-image:url('"+arg.photos[2].url +"')")
     .row.mb-30
       .col-sm-4.col-sm-offset-2 <h3> Secret <small> perdu </small> </h3> <p>#{arg.resume[1]}</p>
-      .col-sm-4 <h3> Jeunesse <small> abandonnée </small> </h3> <p>#{arg.resume[2]}</p>
+      .col-sm-4 <h3> Jeunesse <small> abandonnée </small> </h3> <p>#{arg.resume[1]}</p>
     .row.mb-30
       .col-xs-12.col-sm-10.col-sm-offset-1.text-right.col-md-8.col-md-offset-2
         .article-maj Mise à jour le
         .article-maj #{arg.publication_info.maj.date} - #{arg.publication_info.maj.hour}
         
-    .row.mb-30.hidden-xs.text-center
+    +lastArticles()
+
+
+mixin lastArticles()
+  .row.mb-30.hidden-xs.text-center
       h3.mb-30 Dernières publications
       .col-sm-4
         .article-list-label Musique
@@ -121,8 +125,6 @@ mixin article(arg)
           })
     .row.text-center.mb-45
       a.btn.btn-default.btn-lg(href='/blog') Blog
-      
-      
       
 mixin carousel(args)
   - var classLastArticles = '';
