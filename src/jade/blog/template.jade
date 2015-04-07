@@ -1,16 +1,162 @@
-mixin articleList(title, author, start, end, label, resume, photo_url, article_url)
-    .row.marge-bot-15
-        .col-xs-8
-            div.article-title= title
-            div.article-author= author
-        .col-xs-4.text-right
-            if start
-                div.article-date= start
-            if end
-                div.article-date= end
-    .row
-        .article-bg.col-xs-12.marge-bot-15(style!="background-image: url("+photo_url+")")
-            .article-label.col-xs-12= label
-    .marge-bot-15.article-resume= resume
-    a.btn.btn-primary.btn-default.pull-right.marge-bot-30(href=article_url) Lire la suite
-    .article-separate.marge-bot-30.col-xs-6.col-xs-offset-3
+mixin articleList(arg)
+  //just for dev purposes
+  .row
+    each val in arg
+      .col-xs-12.col-sm-6.col-md-4.mb-30
+        .mb-45
+          .article-list-bg.col-xs-12.mb-30.text-center(style!="background-image: url("+val.photo_url+")")
+            .row.text-center
+              .article-list-label= val.label
+          .row.mb-15
+            .col-xs-8
+              div.article-list-title= val.title
+              div.article-list-author= val.author
+            .col-xs-4.text-right
+              if val.start
+                span.article-list-date(title="Début dans 11 jours")= val.start
+                  if val.start && val.end
+                    | -
+              if val.end
+                span.article-list-date(title="Fin dans 3 semaines")= val.end
+          .mb-15.article-list-resume= val.resume
+          .mb-30
+            each v in val.tags
+              a.btn.btn-default.article-list-tag= v
+          a.btn.btn-default.pull-right.mb-45(href="article.html") Lire la suite
+
+mixin test(arr)
+  each val in arr
+    p #{val.a}
+        
+mixin article(arg)
+  .container
+    .row.mb-15
+      .col-xs-8.col-sm-5.col-sm-offset-1.col-md-4.col-md-offset-2
+        div.article-title= arg.title
+        div.article-author= arg.author
+      .col-xs-4.col-sm-5.text-right.col-md-4
+        if arg.start
+          div.article-date= arg.start
+        if arg.end
+          div.article-date= arg.end
+  .container-fluid
+    .row.mb-30
+      +carousel({
+        id:"preview",
+        photos: arg.photos
+      })      
+  .container
+    .row.mb-30
+      .col-xs-6.col-sm-5.col-sm-offset-1.col-md-4.col-md-offset-2
+        div Posté le 
+          span.article-date #{arg.publication_info.parution.date}
+        div 
+          span.article-hour #{arg.publication_info.parution.hour}
+      .col-xs-6.col-sm-5.text-right.article-author.col-md-4
+        div #{arg.publication_info.author}
+    .row.mb-30
+      each val,i in arg.resume
+        .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+          if i == 0
+            h2.mb-30 Bio <small>graphie</small>
+            //.article-illu.hidden-xs
+          //if i == 2
+            //img.article-illu-map.hidden-xs
+          p.mb-30 #{val}
+    .row.mb-30
+      .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+        h2 Oeuvres <small>célèbres</small>
+        h3.nopadding Nos voies
+    .row.mb-30
+      .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.article-illu-expo(style="background-image:url('"+arg.photos[0].url +"')")
+    .row.mb-15
+      .mb-30.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2= arg.resume[2] 
+      .article-illu-expo-sub.col-sm-4.col-sm-offset-2(style="background-image:url('"+arg.photos[1].url +"')")
+      .article-illu-expo-sub.col-sm-4(style="background-image:url('"+arg.photos[2].url +"')")
+      .col-sm-4.col-sm-offset-2 <h3> Secret <small> perdu </small> </h3> <p>#{arg.resume[1]}</p>
+      .col-sm-4 <h3> Jeunesse <small> abandonnée </small> </h3> <p>#{arg.resume[1]}</p>
+    .row.mb-30
+      .col-xs-12.col-sm-10.col-sm-offset-1.text-right.col-md-8.col-md-offset-2
+        .article-maj Mise à jour le
+        .article-maj #{arg.publication_info.maj.date} - #{arg.publication_info.maj.hour}
+        
+    +lastArticles()
+
+
+mixin lastArticles()
+  .row.mb-30.hidden-xs.text-center
+      h3.mb-30 Dernières publications
+      .col-sm-4
+        .article-list-label Musique
+        .last-articles.last1
+          +carousel({
+            id:'last1',
+            photos: [ 
+              {url: "http://img0.mxstatic.com/wallpapers/8edf0a81c753381ad708ddf6836d7135_large.jpeg"},
+              {url: "http://www.ardeche.com/ou-sortir/image/627625.jpg"},
+              {url: "http://www.montpellier.fr/uploads/Image/a9/17061_571_Culture-Fete_musique.jpg"}
+            ],
+            isLastArticles: true
+          })
+      .col-sm-4
+        .article-list-label Peinture
+        .last-articles.last2 
+          +carousel({
+            id:'last2',
+            photos: [ 
+              {url: "http://s011.radikal.ru/i318/1011/3e/5efe1aaf6c51.jpg"},
+              {url: "http://pijet.com/wp-content/gallery/la-serenissima-project/La_Serenissima.jpg"},
+              {url: "http://www.connaissancedesarts.com/medias/2011/12/20/93272_1324398073_vries.jpg"}
+            ],
+            isLastArticles: true
+          })
+      .col-sm-4
+        .article-list-label Fromage
+        .last-articles.last3
+          +carousel({
+            id:'last3',
+            photos: [ 
+              {url: "http://www.agoarts.com/images/Image/Fromage_mini_1359380807.jpg"},
+              {url: "http://www.ichetkar.fr/wp-content/gallery/pieces-montees/pieces-montee-milk-factory-ichetkar_jjpallot_diaporama_03.jpg"},
+              {url: "http://maison2.advcdn.net/images/medias/000/012/000012382/600.jpg"}
+            ],
+            isLastArticles: true
+          })
+    .row.text-center.mb-45
+      a.btn.btn-default.btn-lg(href='/blog') Blog
+      
+mixin carousel(args)
+  - var classLastArticles = '';
+  if args.isLastArticles
+    - classLastArticles = 'carousel-last-articles hidden-sm hidden-xs'
+  div(class ="carousel slide #{classLastArticles}", id=args.id, data-ride='carousel', data-interval="3000")
+    // Indicators
+    ol.carousel-indicators
+      - var classItem = "active";
+      each val, i in args.photos
+        if i > 0
+          - classItem=""
+        li(class=classItem, data-target='#'+args.id, data-slide-to=i)
+    // Wrapper for slides
+    .carousel-inner(role='listbox')
+      if !args.isLastArticles
+        .container
+          .row
+            .col-sm-offset-1.col-md-offset-2.article-label Photographie
+      - var classItem = "active";
+      each val, i in args.photos
+        if i > 0
+          - classItem=""
+        .item(class=classItem)
+          .fill(style="background-image:url(#{val.url}")
+          if !args.isLastArticles
+            .carousel-caption 
+              h1 #{val.label}
+              p #{val.resume}
+    // Controls
+    a.left.carousel-control(href='#'+args.id, role='button', data-slide='prev')
+      span.glyphicon.glyphicon-chevron-left
+      span.sr-only Previous
+    a.right.carousel-control(href='#'+args.id, role='button', data-slide='next')
+      span.glyphicon.glyphicon-chevron-right
+      span.sr-only Next

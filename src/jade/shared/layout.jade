@@ -3,8 +3,10 @@ html(lang="en")
   head
     block title
       title Chez Felix - Bar à fromage
-
+    
     link(rel="stylesheet", type="text/css", href="/style/main.css")
+    block link
+      | 
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
   body
@@ -14,11 +16,12 @@ html(lang="en")
       | default content
 
     include ./footer
-
+    
   script(src='/vendors/jquery/dist/jquery.min.js')
   script(src='/vendors/bootstrap/dist/js/bootstrap.min.js')
   script(src='//maps.googleapis.com/maps/api/js?v=3.exp')
-
+  block script_js
+    | 
   script(type='text/javascript').
     var map;
     function initialize() {
