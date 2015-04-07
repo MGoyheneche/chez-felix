@@ -1,37 +1,271 @@
+@import 'variables.less';
+
+html,body {
+	height:100%;
+}
+      
+
 .filter{
     text-align: center;
     min-width: auto;
     width: 100%;
 }
-.article-bg{
+.article-list-bg{
     left: 0;
-    
     background-size: cover;
-    min-height:  300px;
+    min-height: 200px;
+    height: 200px;
+  
+    @media screen and (min-width: 400px){
+      min-height: 300px;
+      height: 300px;
+    }
+  
+   @media screen and (min-width: @screen-sm-min){
+     min-height: 200px;
+     height: 200px;
+   }
 }
 
-.article-label{
-    left: 0;
+.article-list-label{
     position: absolute;
-    padding-right: 30px;
-    padding-left: 30px;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    top:25%;
+    border-radius: 2px;
+    padding: 10px;
     color: white;
     background-color: rgba(0.5,0.5,0.5,0.7);
 }
 
-.article-separate{
+.article-list-separate{
     border-bottom: 1px solid black;
     height: 15px;
 }
 
-.article-title{
+.article-list-title, .article-title{
     font-weight: bold;
 }
 
-.article-date{
+.article-list-date{
+  color: rgba(0,0,0,0.5);
+  font-size: 0.9em;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
+.article-list-author{
+}
+
+.article-list-parution_date{
+  font-size: 0.8em;
+  color: gray;
+}
+
+
+/***** one article full view ******/
 .article-author{
+  font-style: italic;
+}
+
+.article-label{
+  z-index: 1000;
+  position: absolute;
+  border-radius: 2px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  background-color: rgba(0.5,0.5,0.5,0.7);
+}
+
+.article-img{
+  height: 225px;
+  max-height: 225px
+}
+
+
+.overlay { 
+  color:#fff;
+  position:absolute;
+  z-index:12;
+  top:50%;
+  left:0;
+  width:100%;
+  text-align:center;
+}
+
+#carousel-article{
+  width: 100%;
+}
+
+.carousel .item {
+  background-color:transparent;
+  height: 250px;
+  @media screen and (min-width: @screen-xs-min){
+    min-height: 300px;
+    height: 300px;
+  }
+  
+  @media screen and (min-width: @screen-sm-min){
+    min-height: 400px;
+    height: 400px;
+  }
+ 
+  @media screen and (min-width: @screen-lg-min){
+    min-height: 500px;
+    height: 500px;
+  }
+}
+
+.carousel,.item,.active{
+  height:100%;
+}
+
+.carousel-inner{
+  height:100%;
+}
+
+.fill{
+  width:100%;
+  height:100%;
+  background-position:center;
+  background-size:cover;
+  background-attachment:fixed;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-caption {
+  margin:0;
+  margin: 0;
+  bottom: 0;
+}
+
+.carousel-indicators{
+  bottom: 0;
+}
+
+.link-reset{
+  color:inherit; 
+  text-decoration: none;
+  &:hover{
+    text-decoration: none;
+    color: black;
+  }
+}
+
+
+.article-illu{
+  background-image: url("http://www.laboiteverte.fr/wp-content/uploads/2011/03/portrait-pierre-gonnord-01.jpg");
+  width: 150px;
+  height:200px;
+  float: left;
+  background-size:cover;
+  margin-right: 35px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+
+.article-list-tag{
+  opacity: 0.7;
+  font-size: 0.8em;
+  margin-right: 10px;
+  background-color: gray;
+  color:white;
+  padding: 6px;
+  border-radius: 5px;
+  border: 0px;
+}
+
+.article-illu-map{
+  float: right;
+  background-image: url('https://cdn3.iconfinder.com/data/icons/ballicons-free/128/map-.png');
+  width: 90px;
+  height: 90px;
+  background-size:cover;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.article-maj{
+  font-size: 0.9em;
+  color: gray;
+}
+
+.last-articles{
+  
+  @media screen and (min-width: @screen-sm-min){
+    min-height: 150px;
+    height: 150px;
+  } 
+  @media screen and (min-width: @screen-md-min){
+    min-height:200px;
+    height: 200px;
+  }
+  background-size: cover;
+}
+
+.last1{
+  background-image: url('http://img.over-blog-kiwi.com/0/32/11/24/201301/ob_271d197243be84016aaa3ad08f60fa9b_1-616-vinyl-hd.jpg');
+}
+
+.last2{
+  background-image: url('http://www.galerie-com.com/grand_img/0866455001206352565.jpg');
+}
+
+.last3{
+  background-image: url('http://www.tourisme-aveyron.com/fr/decouvrir/incontournables/images/bandeau/roquefort/Photo-3.jpg');
+}
+
+
+.carousel-last-articles{
+  .fill{
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position: center;
+    background-attachment: scroll;
+  }
+  opacity: 0;    
+  transition: all 0.3s ease-in-out 0s;
+
+  &:hover{
+    opacity: 1;
+    transition: all 0.3s ease-in-out 0s;
+  }
+}
+
+
+.article-illu-expo{
+  height: 250px;
+  
+  @media screen and (min-width: @screen-sm-min){
+   height: 300px;
+  }
+  @media screen and (min-width: @screen-md-min){
+   height: 400px;
+  }
+  @media screen and (min-width: @screen-lg-min){
+   height: 500px;
+  }
+
+  background-size: cover;
+  background-position: center;
+}
+
+.article-illu-expo-sub{
+  height: 200px;
+  background-size: cover;
+
+  @media screen and (min-width: @screen-md-min){
+    height: 250px;
+  }
+  background-position: center;
+}
+
+.article-illu-block{
+  background-color:#dddddd; 
+  padding-top:30px;
+  padding-bottom:100px;
 }

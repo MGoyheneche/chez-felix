@@ -44,6 +44,13 @@ gulp.task('copy', function() {
    .pipe(gulp.dest('./build/vendors/'));
 });
 
+// conf more modulable here rather than in bootstrap/variables.less
+gulp.task('glyphicons', function() {
+   gulp.src('./src/bower_components/bootstrap/fonts/**/*.*')
+   .pipe(gulp.dest('./build/fonts'));
+});
+
+  
 gulp.task('watch', function () {
   gulp.watch(['./src/jade/**/*.jade'], ['jade']);
   gulp.watch(['./src/less/**/*.less'], ['less']);
@@ -56,4 +63,4 @@ gulp.task('watch', function () {
     ['reload']);
 });
 
-gulp.task('default', ['jade', 'less', 'copy', 'watch', 'connect']);
+gulp.task('default', ['jade', 'less', 'glyphicons', 'copy', 'watch', 'connect']);
