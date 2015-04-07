@@ -1,0 +1,80 @@
+include ./partials/_fromage
+
+extends ./../shared/layout.jade
+
+block content
+
+  .container
+    .filter
+      .navbar.navbar-default.col-md-12
+        ul.nav.navbar-nav      
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+              | Lait 
+              span.caret
+            ul.dropdown-menu(role='menu')
+              li
+                a(href='#') Action    
+              li
+                a(href='#') Another action
+              li
+                a(href='#') Something else here
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+              | Pâtes 
+              span.caret
+            ul.dropdown-menu(role='menu')
+              li
+                a(href='#') Action    
+              li
+                a(href='#') Another action
+              li
+                a(href='#') Something else here
+        
+          li.dropdown
+            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+              | Région 
+              span.caret
+            ul.dropdown-menu(role='menu')
+              li
+                a(href='#') Action    
+              li
+                a(href='#') Another action
+              li
+                a(href='#') Something else here
+
+        form.navbar-form.navbar-left(role='search')
+          .form-group
+            input.form-control(type='text', placeholder='Search')      
+          button.btn.btn-default(type='submit') Chercher
+
+      
+    
+    .row
+      +fromage(
+        "Camembert de brebis",
+        "//placehold.it/350x150",
+        "Lait de brebis",
+        "Pâte fleurie",
+        "Normandie", 
+        "Alan Loisuzk",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+      
+      +fromage(
+        "Reblochon",
+        "//placehold.it/350x150",
+        "Lait de brebis",
+        "Pâte fleurie",
+        "Normandie", 
+        "Alan Loisuzk",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        
+      +fromage(
+        "Comté",
+        "//placehold.it/350x150",
+        "Lait de brebis",
+        "Pâte fleurie",
+        "Normandie", 
+        "Alan Loisuzk",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+  
