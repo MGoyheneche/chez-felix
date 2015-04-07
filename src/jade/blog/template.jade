@@ -68,12 +68,11 @@ mixin article(arg)
         h2 Oeuvres <small>célèbres</small>
         h3.nopadding Nos voies
     .row.mb-30
-      .article-illu-expo.mb-30(style="background-image:url('"+arg.photos[0].url +"')")
-      .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2= arg.resume[2] 
+      .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.article-illu-expo(style="background-image:url('"+arg.photos[0].url +"')")
     .row.mb-15
+      .mb-30.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2= arg.resume[2] 
       .article-illu-expo-sub.col-sm-4.col-sm-offset-2(style="background-image:url('"+arg.photos[1].url +"')")
       .article-illu-expo-sub.col-sm-4(style="background-image:url('"+arg.photos[2].url +"')")
-    .row.mb-30
       .col-sm-4.col-sm-offset-2 <h3> Secret <small> perdu </small> </h3> <p>#{arg.resume[1]}</p>
       .col-sm-4 <h3> Jeunesse <small> abandonnée </small> </h3> <p>#{arg.resume[1]}</p>
     .row.mb-30
