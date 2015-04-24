@@ -13,7 +13,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('less', function () {
-  return gulp.src('./src/less/*.less')
+  return gulp.src('./src/less/main.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'src/bower_components/bootstrap/less') ]
     }))
@@ -50,7 +50,7 @@ gulp.task('glyphicons', function() {
    .pipe(gulp.dest('./build/fonts'));
 });
 
-  
+
 gulp.task('watch', function () {
   gulp.watch(['./src/jade/**/*.jade'], ['jade']);
   gulp.watch(['./src/less/**/*.less'], ['less']);
