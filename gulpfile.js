@@ -42,6 +42,8 @@ gulp.task('reload', function () {
 gulp.task('copy', function() {
    gulp.src('./src/bower_components/**/*.*')
    .pipe(gulp.dest('./build/vendors/'));
+   gulp.src('./src/images/**/*.*')
+   .pipe(gulp.dest('./build/images/'));
 });
 
 // conf more modulable here rather than in bootstrap/variables.less
