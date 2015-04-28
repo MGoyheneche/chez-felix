@@ -1,0 +1,51 @@
+header {
+  padding: 30px inherit;
+}
+
+.logotype {
+
+  text-indent: -9999px;
+
+  width: 132px;
+  height: 57px;
+  background: url('/images/shared/logotype_chez_felix_horizontal.svg');
+
+  @media (min-width: @screen-sm-min) {
+    width: 101px;
+    height: 90px;
+    background: url('/images/shared/logotype_chez_felix_vertical.svg');
+  }
+}
+
+nav.navbar {
+  .icon-bar {
+    background-color: @primary-color;
+  }
+  .navbar-toggle {
+    padding: 30px inherit;
+  }
+
+  @media (min-width: @screen-sm-min) {
+    #navbar {
+      padding-top: 74px;
+    }
+  }
+
+  a {
+    color: @grey;
+    text-transform: uppercase;
+    background: none !important;
+
+    &:hover {
+      color: @black;
+    }
+  }
+
+  .active {
+    border-bottom: 2px solid @primary-color;
+
+    a {
+      color: @black;
+    }
+  }
+}

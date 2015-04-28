@@ -1,0 +1,21 @@
+body {
+  /* Extra small devices (phones, less than 768px) */
+  /* No media query since this is the default in Bootstrap */
+  background: @background-color-body;
+  border: 6px solid @border-body;
+
+  /* Small devices (tablets, 768px and up) */
+  @media (min-width: @screen-sm-min) {
+    border: 12px solid @border-body;
+  }
+
+  /* Medium devices (desktops, 992px and up) */
+  @media (min-width: @screen-md-min) {
+    border: 18px solid @border-body;
+  }
+
+  /* Large devices (large desktops, 1200px and up) */
+  @media (min-width: @screen-lg-min) {
+    border: 24px solid @border-body;
+  }
+}
