@@ -9,10 +9,13 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
   body
-    include ./header
+    .frame
+      include ./header
 
-    block content
-      | default content
+      block content
+        | default content
+        
+      include ./newsletter
 
     include ./footer
     

@@ -1,105 +1,90 @@
 extends ./../shared/layout.jade
 
-//- block content
-//-   .jumbotron
-//-     .container
-//-       h1 Un endroit convivial, des produits extraordinaires.
-//-       p Excepteur sint occaecat cupidatat no proit, qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat cupidatat no proit, qui officia deserunt mollit anim id est laborum.
-//- 
-//-       .btn-toolbar
-//-         .btn-group
-//-           a.btn.btn-primary.btn-lg(href='#') Consulter notre carte
-//-         .btn-group
-//-           a.btn.btn-default.btn-lg(href='#') Nos menus & nos formules
-//- 
-//-   .about-felix
-//-     .container
-//-       .row
-//-         .col-sm-5
-//-           a(href='#')
-//-             img(src='//placehold.it/350x350')
-//-         .col-sm-7
-//-           h1 Fromager de père en fils.
-//-           hr
-//-           h2.def
-//-             strong Felix
-//-             | , Paris 1982, fromager.
-//-           p Fils de Jacques et petit-fils de Jules, tous deux fromagers. Il reprend la fromagerie familiale et la transforme en bar à fromage en 2012.
-//-           .btn-toolbar
-//-             .btn-group
-//-               a.btn.btn-primary.btn-lg(href='#') A propos de Félix
-//- 
-//-   .weekly-selection
-//-     .container
-//-       .row
-//-         .col-sm-7
-//-           h1 Le sélectionné de la semaine.
-//-           hr
-//-           h2 Le reblochon de Savoie.
-//-           p Excepteur sint occaecat cupidatat nopoit, qui officia deserunt mollit anim id est laborum. Deserunt mollit anim id est laborum.
-//-           .btn-toolbar
-//-             .btn-group
-//-               a.btn.btn-primary(href='#') Le reblochon de Savoie
-//-             .btn-group
-//-               a.btn.btn-default(href='#') Tous les sélectionnés
-//-         .col-sm-5
-//-           a(href='#')
-//-             img(src='//placehold.it/350x350')
-//- 
-//-   .testimonials
-//-     .container
-//-       .row
-//-         .col-sm-5
-//-           .panel.panel-default
-//-             .panel-body
-//-               p Family of four from Finland visited twice in Feb 2015. Pizzas are excellent, pastas are good, just a bit over cooked. Service is flexible and alternatives for kids are available. Possible to get in and out quickly.
-//-               p.text-muted 10 avril à 13h12
-//-             .panel-footer
-//-               p
-//-                 a.avatar(href='#')
-//-                   img(src='//placehold.it/96x96')
-//-                 | Lucie Hoefler
-//-                 a(href='#') @Lucie
-//-         .col-sm-7
-//-           .panel.panel-default
-//-             .panel-body
-//-               p Family of four from Finland visited twice in Feb 2015. Pizzas are excellent, pastas are good, just a bit over cooked. Service is flexible and alternatives for kids are available. Possible to get in and out quickly. Family of four from Finland visited twice in Feb 2015. Pizzas are excellent, pastas are good, just a bit over cooked. Service is flexible and alternatives for kids are available. Possible to get in and out quickly.
-//-               p.text-muted 10 avril à 13h12
-//-             .panel-footer
-//-               p
-//-                 a.avatar(href='#')
-//-                   img(src='//placehold.it/96x96')
-//-                 | Lucie Hoefler
-//-                 a(href='#') @Lucie
-//- 
-//-       .center-text
-//-         a.btn.btn-primary(href="#") Lire plus d'avis...
-//- 
-//-   .latest-posts
-//-     .container
-//-       .row
-//-         article.col-sm-6
-//-           .panel.panel-default
-//-             .panel-heading
-//-               .cover
-//-                 img(src="//placehold.it/350x150")
-//-             .panel-body
-//-               .content
-//-                 h3 La tome d'Auvergne
-//-                 .post-category Les derniers arrivés
-//-                 .post-date 10 avril 2015
-//-                 p.post-excerpt
-//-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-//- 
-//- 
-//-         article.col-sm-6
-//-           .panel.panel-default
-//-             .panel-heading
-//-               .cover
-//-                 img(src="//placehold.it/350x150")
-//-             .panel-body
-//-               .content
-//-                 h3 Rineke Dijkstra
-//-                 .post-category Vernissage
-//-                 .post-date 10 avril 2015
-//-                 .event-type Photographie
+block content
+  .container
+    .jumbotron
+      h1 Un endroit convivial, des produits extraordinaires.
+      p.lead Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      .btn-toolbar
+        .btn-group
+          a.btn.btn-default.btn-lg.btn-primary(href="#") Consulter notre carte
+        .btn-group
+          a.btn.btn-lg.btn-outline(href="#") Nos menus & formules
+    
+    .about-felix.row
+      .picture.col-sm-6
+          a(href="#")
+            img(src="/images/home/felix.jpg")
+      .description.text-container.col-sm-6
+          h2 Fromager de père en fils
+          hr
+          p.definition
+            strong Felix, 
+            | Paris 1983, Fromager.
+          p Fils de Jacques et petit-fils de Jules, tous deux fromagers. Il reprend la fromagerie familiale et la transforme en bar à fromage en 2012.
+          a.btn.btn-default.btn-md.mt-15(href="#") A propos de Félix
+
+
+    .weekly-selection.row
+      .description.text-container.col-sm-6
+        h2 Le sélectionné de la semaine
+        hr
+        h3 Le reblochon de Savoie.
+        p Excepteur sint occaecat cupidatat nopoit, qui officia deserunt mollit anim id est laborum. Deserunt mollit anim id est laborum.
+        a.btn.btn-default.btn-md.mt-15(href='#') Le reblochon de Savoie
+      .picture.col-sm-6
+        a(href="#")
+          img(src="/images/home/weekly_selection.jpg")
+
+    
+    .testimonials
+      .row
+        .col-sm-6.col-sm-offset-3
+          h2 Nos clients parlent de nous
+          p.lead Ces avis sont les derniers avis postés sur les sites Trip advisor et La fourchette. Aucun filtrage n’est effectué.
+      
+      .row
+        .testimonial
+          .informations.col-sm-2
+            a.avatar(href='#')
+              img(src='/images/home/avatar_1.jpg')
+            | Lucie Hoefler 
+            a(href='#') @Lucie
+            .date 10 avril 2015
+          .content.text-container.col-sm-4 Family of four from Finland visited twice in Feb 2015. Pizzas are excellent, pastas are good, just a bit over cooked. Service is flexible and alternatives for kids are available. Possible to get in and out quickly.
+          
+        .testimonial
+          .informations.col-sm-2
+            a.avatar(href='#')
+              img(src='/images/home/avatar_2.jpg')
+            | Lucie Hoefler 
+            a(href='#') @Lucie
+            .date 10 avril 2015
+          .content.text-container.col-sm-4 Family of four from Finland visited twice in Feb 2015. Pizzas are excellent, pastas are good, just a bit over cooked. Service is flexible and alternatives for kids are available. Possible to get in and out quickly.
+          
+      .center-text
+        a.btn.btn-default.btn-md.mt-15(href="#") Lire plus d'avis...
+        
+    .private-view.row
+      .picture.col-sm-8
+          a(href="#")
+            img(src="/images/home/rineke.jpg")
+      .description.text-container.col-sm-4
+          .category Vernissage
+          .date du 11 avril au 30 mai
+          .art Photographie
+          h2 Rineke Dijkstra
+          p Dijkstra concentrates on single portraits, and usually works in series, looking at groups such as adolescents, clubbers, and soldiers, from the Beach Portraits of 1992 and on, to the video installation Buzzclub/Mysteryworld (1996-1999) ...
+          a.btn.btn-default.btn-md.mt-15(href="#") Lire la suite
+        
+    .latecomers.row
+      .picture.col-sm-4
+          a(href="#")
+            img(src="/images/home/latecomers.jpg")
+      .description.text-container.col-sm-8
+          .category Les derniers arrivés
+          .date semaine du 3 au 10 mai
+          h2 Rineke Dijkstra
+          p Dijkstra concentrates on single portraits, and usually works in series, looking at groups such as adolescents, clubbers, and soldiers, from the Beach Portraits of 1992 and on, to the video installation Buzzclub/Mysteryworld (1996-1999) ...
+          a.btn.btn-default.btn-md.mt-15(href="#") Lire la suite
+    

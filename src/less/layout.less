@@ -1,8 +1,9 @@
-body {
+.frame {
   /* Extra small devices (phones, less than 768px) */
   /* No media query since this is the default in Bootstrap */
-  background: @background-color-body;
+  background: @background-color-html;
   border: 6px solid @border-body;
+  padding: 0 15px;
 
   /* Small devices (tablets, 768px and up) */
   @media (min-width: @screen-sm-min) {
@@ -18,4 +19,13 @@ body {
   @media (min-width: @screen-lg-min) {
     border: 24px solid @border-body;
   }
+}
+
+.text-container {
+  padding: 30px;
+}
+
+hr {
+  width: 80px;
+  margin-left: 0;
 }
