@@ -34,7 +34,7 @@ mixin article(arg)
       .col-xs-8.col-sm-5.col-sm-offset-1.col-md-4.col-md-offset-2
         div.article-title= arg.title
         div.article-author= arg.author
-      .col-xs-4.col-sm-5.text-right.col-md-4.col-md-offset-2
+      .col-xs-4.col-sm-5.text-right.col-md-4
         if arg.start
           div.article-date= arg.start
         if arg.end
@@ -54,22 +54,37 @@ mixin article(arg)
           span.article-hour #{arg.publication_info.parution.hour}
       .col-xs-6.col-sm-5.text-right.article-author.col-md-4
         div #{arg.publication_info.author}
-    .row
+    .row.mb-30
       each val,i in arg.resume
         .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
           if i == 0
             h2.mb-30 Bio <small>graphie</small>
-            .article-illu.hidden-xs
-          if i == 2
-            h2.mb-30 Chemin <small>artistique</small>
-            img.article-illu-map.hidden-xs
-          p.mb-30(style='text-align:justify') #{val}
+            //.article-illu.hidden-xs
+          //if i == 2
+            //img.article-illu-map.hidden-xs
+          p.mb-30 #{val}
+    .row.mb-30
+      .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+        h2 Oeuvres <small>célèbres</small>
+        h3.nopadding Nos voies
+    .row.mb-30
+      .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.article-illu-expo(style="background-image:url('"+arg.photos[0].url +"')")
+    .row.mb-15
+      .mb-30.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2= arg.resume[2] 
+      .article-illu-expo-sub.col-sm-4.col-sm-offset-2(style="background-image:url('"+arg.photos[1].url +"')")
+      .article-illu-expo-sub.col-sm-4(style="background-image:url('"+arg.photos[2].url +"')")
+      .col-sm-4.col-sm-offset-2 <h3> Secret <small> perdu </small> </h3> <p>#{arg.resume[1]}</p>
+      .col-sm-4 <h3> Jeunesse <small> abandonnée </small> </h3> <p>#{arg.resume[1]}</p>
     .row.mb-30
       .col-xs-12.col-sm-10.col-sm-offset-1.text-right.col-md-8.col-md-offset-2
         .article-maj Mise à jour le
         .article-maj #{arg.publication_info.maj.date} - #{arg.publication_info.maj.hour}
         
-    .row.mb-30.hidden-xs.text-center
+    +lastArticles()
+
+
+mixin lastArticles()
+  .row.mb-30.hidden-xs.text-center
       h3.mb-30 Dernières publications
       .col-sm-4
         .article-list-label Musique
@@ -110,36 +125,38 @@ mixin article(arg)
     .row.text-center.mb-45
       a.btn.btn-default.btn-lg(href='/blog') Blog
       
-      
-      
-  mixin carousel(args)
-    - var classLastArticles = '';
-    if args.isLastArticles
-      - classLastArticles = 'carousel-last-articles hidden-sm hidden-xs'
-    div(class ="carousel slide #{classLastArticles}", id=args.id, data-ride='carousel', data-interval="3000")
-      // Indicators
-      ol.carousel-indicators
-        - var classItem = "active";
-        each val, i in args.photos
-          if i > 0
-            - classItem=""
-          li(class=classItem, data-target='#'+args.id, data-slide-to=i) 
-      // Wrapper for slides
-      .carousel-inner(role='listbox')
-        - var classItem = "active";
-        each val, i in args.photos
-          if i > 0
-            - classItem=""
-          .item(class=classItem)
-            .fill(style="background-image:url(#{val.url}")
-            if !args.isLastArticles
-              .carousel-caption 
-                h1 #{val.label}
-                p #{val.resume}
-      // Controls
-      a.left.carousel-control(href='#'+args.id, role='button', data-slide='prev')
-        span.glyphicon.glyphicon-chevron-left
-        span.sr-only Previous
-      a.right.carousel-control(href='#'+args.id, role='button', data-slide='next')
-        span.glyphicon.glyphicon-chevron-right
-        span.sr-only Next
+mixin carousel(args)
+  - var classLastArticles = '';
+  if args.isLastArticles
+    - classLastArticles = 'carousel-last-articles hidden-sm hidden-xs'
+  div(class ="carousel slide #{classLastArticles}", id=args.id, data-ride='carousel', data-interval="3000")
+    // Indicators
+    ol.carousel-indicators
+      - var classItem = "active";
+      each val, i in args.photos
+        if i > 0
+          - classItem=""
+        li(class=classItem, data-target='#'+args.id, data-slide-to=i)
+    // Wrapper for slides
+    .carousel-inner(role='listbox')
+      if !args.isLastArticles
+        .container
+          .row
+            .col-sm-offset-1.col-md-offset-2.article-label Photographie
+      - var classItem = "active";
+      each val, i in args.photos
+        if i > 0
+          - classItem=""
+        .item(class=classItem)
+          .fill(style="background-image:url(#{val.url}")
+          if !args.isLastArticles
+            .carousel-caption 
+              h1 #{val.label}
+              p #{val.resume}
+    // Controls
+    a.left.carousel-control(href='#'+args.id, role='button', data-slide='prev')
+      span.glyphicon.glyphicon-chevron-left
+      span.sr-only Previous
+    a.right.carousel-control(href='#'+args.id, role='button', data-slide='next')
+      span.glyphicon.glyphicon-chevron-right
+      span.sr-only Next

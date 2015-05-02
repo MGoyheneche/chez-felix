@@ -75,7 +75,6 @@ html,body {
   padding-left: 20px;
   padding-right: 20px;
   color: white;
-  top:1px;
   background-color: rgba(0.5,0.5,0.5,0.7);
 }
 
@@ -111,11 +110,11 @@ html,body {
     min-height: 400px;
     height: 400px;
   }
-/*  
-  @media screen and (min-width: @screen-md-min){
+ 
+  @media screen and (min-width: @screen-lg-min){
     min-height: 500px;
     height: 500px;
-  }*/
+  }
 }
 
 .carousel,.item,.active{
@@ -235,4 +234,38 @@ html,body {
     opacity: 1;
     transition: all 0.3s ease-in-out 0s;
   }
+}
+
+
+.article-illu-expo{
+  height: 250px;
+  
+  @media screen and (min-width: @screen-sm-min){
+   height: 300px;
+  }
+  @media screen and (min-width: @screen-md-min){
+   height: 400px;
+  }
+  @media screen and (min-width: @screen-lg-min){
+   height: 500px;
+  }
+
+  background-size: cover;
+  background-position: center;
+}
+
+.article-illu-expo-sub{
+  height: 200px;
+  background-size: cover;
+
+  @media screen and (min-width: @screen-md-min){
+    height: 250px;
+  }
+  background-position: center;
+}
+
+.article-illu-block{
+  background-color:#dddddd; 
+  padding-top:30px;
+  padding-bottom:100px;
 }
