@@ -15,8 +15,42 @@
   }
 }
 
-.testimonial .content {
-  background: @white;
+
+.testimonials{
+  background: @light-grey;
+}
+
+.testimonial {
+  .content{
+    background: @white;
+    font-style: italic;
+    line-height: 33px;
+    color:#353435;
+    p{
+      padding-bottom: 35px;
+      padding-top: 35px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  .informations{
+    .meta-info{
+      padding:30px;
+      a{
+        color: #353435;
+      }
+      .avatar{
+        font-family: @sans-serif;
+        font-size: 20px;
+      }
+      .twitter{
+        padding-bottom: 10px
+      }
+      .date{
+        color: @grey;
+      }
+    }
+  }
 }
 
 .private-view {
@@ -26,4 +60,67 @@
 
 .latecomers {
   background: @light-grey;
+}
+
+.btn-white{
+  color: @grey;
+  background-color: @white;
+}
+
+.btn-purple{
+  color: @white;
+  background-color: rgba(228, 231, 235, 0.51);
+}
+
+.btn-dark{
+  color: @white;
+  background-color: #5c6566;
+  &:hover{
+    background-color: @grey;
+  }
+}
+
+.citation{
+  color: @grey;
+  font-size: 1em !important;
+}
+
+.private-view, .latecomers{
+  .description{
+    padding-left:50px;
+    padding-right:50px;
+    padding-top: 50px;
+    
+    .art{
+      float: right;
+      border-radius: 3px;
+      background-color: #74a3a4;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 2px;
+      padding-top: 2px;
+      top:50px;
+      right: 40px;
+      font-family: cursive;
+      font-size: 14px;
+    }
+    .category{
+      text-transform: uppercase;
+      color: @grey;
+      letter-spacing: 5px;
+      font-size: 14px;
+      .mb-15;
+    }
+    .date{
+      .mb-45
+    }
+  }
+}
+
+.private-view p{
+  color:@p-dark-grey;
+}
+
+.latecomers p{
+  color: @p-light-grey;
 }

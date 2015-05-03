@@ -3,8 +3,13 @@ extends ./../shared/layout.jade
 block content
   .container
     .jumbotron
-      h1 Un endroit convivial, des produits extraordinaires.
-      p.lead Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      .row
+        .col-md-10
+          h1.mb-30 Un endroit convivial, des produits extraordinaires.
+      .row
+        .col-md-10
+          p.lead De père en fils depuis près de 100 ans, nous avons l’habitude de sélectionner, pour vous, les meilleurs fromages. Pour chacune de nos recettes, nous utilisons des produits issus de l’agriculture biologique.
+      p.lead.col-md-12.mb-45 Nos terroirs, tout d'abord, et un brin de modernité. La tradition de demain se savoure aujourd'hui.
       .btn-toolbar
         .btn-group
           a.btn.btn-default.btn-lg.btn-primary(href="#") Consulter notre carte
@@ -15,23 +20,23 @@ block content
       .picture.col-sm-6
           a(href="#")
             img(src="/images/home/felix.jpg")
-      .description.text-container.col-sm-6
+      .description.text-container.col-sm-6.pad-60
           h2 Fromager de père en fils
-          hr
+          hr.mb-45
           p.definition
             strong Felix, 
             | Paris 1983, Fromager.
-          p Fils de Jacques et petit-fils de Jules, tous deux fromagers. Il reprend la fromagerie familiale et la transforme en bar à fromage en 2012.
-          a.btn.btn-default.btn-md.mt-15(href="#") A propos de Félix
+          p.mb-30 Fils de Jacques et petit-fils de Jules, tous deux fromagers. Il reprend la fromagerie familiale et la transforme en bar à fromage en 2012.
+          a.btn.btn-default.btn-md.mt-15.btn-white(href="#") A propos de Félix
 
 
     .weekly-selection.row
-      .description.text-container.col-sm-6
+      .description.text-container.col-sm-6.pad-60
         h2 Le sélectionné de la semaine
-        hr
+        hr.mb-45
         h3 Le reblochon de Savoie.
-        p Excepteur sint occaecat cupidatat nopoit, qui officia deserunt mollit anim id est laborum. Deserunt mollit anim id est laborum.
-        a.btn.btn-default.btn-md.mt-15(href='#') Le reblochon de Savoie
+        p.mb-30 Voluptueux, tendre et rustique, ce reblochon fraichement arrivé de Chambéry émerveille nos papilles. Vieillit de 23 mois, les cristaux de sels viennent habiller et sublimer ce nouveau bijou. Il ne demande qu'a être goûté!
+        a.btn.btn-default.btn-md.btn-purple.mt-15(href='#') Le reblochon de Savoie
       .picture.col-sm-6
         a(href="#")
           img(src="/images/home/weekly_selection.jpg")
@@ -39,43 +44,47 @@ block content
     
     .testimonials
       .row
-        .col-sm-6.col-sm-offset-3
-          h2 Nos clients parlent de nous
-          p.lead Ces avis sont les derniers avis postés sur les sites Trip advisor et La fourchette. Aucun filtrage n’est effectué.
+        .col-sm-6.col-sm-offset-3.padb-45.padt-45.text-center
+          h2.mb-30 Nos clients parlent de nous
+          p.lead.citation Ces avis sont les derniers avis postés sur les sites Trip advisor et La fourchette. Aucun filtrage n’est effectué.
       
-      .row
+      .row.mb-45
         .testimonial
           .informations.col-sm-2
-            a.avatar(href='#')
-              img(src='/images/home/avatar_1.jpg')
-            | Lucie Hoefler 
-            a(href='#') @Lucie
-            .date 10 avril 2015
-          .content.text-container.col-sm-4 Family of four from Finland visited twice in Feb 2015. Pizzas are excellent, pastas are good, just a bit over cooked. Service is flexible and alternatives for kids are available. Possible to get in and out quickly.
+            img(src='/images/home/avatar_1.jpg')
+            .meta-info
+              div.mb-15
+                a.avatar(href='#') Lucie Hoefler 
+                a.twitter(href='#') @Lucie
+              .date 10 avril 2015
+          .content.text-container.col-sm-4
+            p Family of four from Finland visited twice in Feb 2015. Pizzas are excellent, pastas are good, just a bit over cooked. Service is flexible and alternatives for kids are available. Possible to get in and out quickly.
           
         .testimonial
           .informations.col-sm-2
-            a.avatar(href='#')
-              img(src='/images/home/avatar_2.jpg')
-            | Lucie Hoefler 
-            a(href='#') @Lucie
-            .date 10 avril 2015
-          .content.text-container.col-sm-4 Family of four from Finland visited twice in Feb 2015. Pizzas are excellent, pastas are good, just a bit over cooked. Service is flexible and alternatives for kids are available. Possible to get in and out quickly.
+            img(src='/images/home/avatar_2.jpg')
+            .meta-info
+              div.mb-15
+                a.avatar(href='#') Eddy Luotuo 
+                a.twitter(href='#') @edy
+              .date 10 avril 2015
+          .content.text-container.col-sm-4 
+            p Family of four from Finland visited twice in Feb 2015. Pizzas are excellent, pastas are good, just a bit over cooked. Service is flexible and alternatives for kids are available. Possible to get in and out quickly.
           
-      .center-text
-        a.btn.btn-default.btn-md.mt-15(href="#") Lire plus d'avis...
+      .text-center
+        a.btn.btn-default.btn-md.mt-15.btn-white(href="#").mb-45 Lire plus d'avis...
         
     .private-view.row
       .picture.col-sm-8
           a(href="#")
             img(src="/images/home/rineke.jpg")
       .description.text-container.col-sm-4
+          span.art.mb-45 Photographie
           .category Vernissage
           .date du 11 avril au 30 mai
-          .art Photographie
-          h2 Rineke Dijkstra
-          p Dijkstra concentrates on single portraits, and usually works in series, looking at groups such as adolescents, clubbers, and soldiers, from the Beach Portraits of 1992 and on, to the video installation Buzzclub/Mysteryworld (1996-1999) ...
-          a.btn.btn-default.btn-md.mt-15(href="#") Lire la suite
+          h2.mb-30 Rineke Dijkstra
+          p.mb-30 Dijkstra concentrates on single portraits, and usually works in series, looking at groups such as adolescents, clubbers, and soldiers, from the Beach Portraits of 1992 and on, to the video installation Buzzclub/Mysteryworld (1996-1999) ...
+          a.btn.btn-default.btn-md.btn-dark.mt-15(href="#") Lire la suite
         
     .latecomers.row
       .picture.col-sm-4
@@ -84,7 +93,7 @@ block content
       .description.text-container.col-sm-8
           .category Les derniers arrivés
           .date semaine du 3 au 10 mai
-          h2 Rineke Dijkstra
-          p Dijkstra concentrates on single portraits, and usually works in series, looking at groups such as adolescents, clubbers, and soldiers, from the Beach Portraits of 1992 and on, to the video installation Buzzclub/Mysteryworld (1996-1999) ...
+          h2.mb-30 Rineke Dijkstra
+          p.mb-30 Dijkstra concentrates on single portraits, and usually works in series, looking at groups such as adolescents, clubbers, and soldiers, from the Beach Portraits of 1992 and on, to the video installation Buzzclub/Mysteryworld (1996-1999) ...
           a.btn.btn-default.btn-md.mt-15(href="#") Lire la suite
     
