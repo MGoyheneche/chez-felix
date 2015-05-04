@@ -72,18 +72,23 @@ html,body {
 
 /***** one article full view ******/
 .article-author{
-  font-style: italic;
+  
 }
 
 .article-label{
   z-index: 1000;
-  position: absolute;
-  border-radius: 2px;
+  background-color: rgba(116, 163, 164, 0.85);
   padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-top:5px;
+  font-family: cursive;
+  font-size: 14px;
+  position: absolute;
+  border-radius: 3px;
   color: white;
-  background-color: rgba(0.5,0.5,0.5,0.7);
+  float: left;
 }
 
 .article-img{
@@ -115,8 +120,8 @@ html,body {
   }
   
   @media screen and (min-width: @screen-sm-min){
-    min-height: 400px;
-    height: 400px;
+    min-height: 350px;
+    height: 350px;
   }
  
   @media screen and (min-width: @screen-lg-min){
@@ -267,6 +272,7 @@ html,body {
 
   background-size: cover;
   background-position: center;
+  z-index: 3;
 }
 
 .article-illu-expo-sub{
@@ -297,4 +303,32 @@ html,body {
     color: @primary-color;
     background-color: @white;
   }
+}
+
+.text-resume{
+  background-color: @white;
+  padding: 50px;
+}
+
+.text-resume-pad30{
+  background-color: @white;
+  padding: 30px;
+  .mr-15;
+  .ml-15;
+}
+
+.square-img{
+  width: 40px;
+  height: 40px;
+  background-color: @primary-color;
+  left: 0;
+  margin-left: 50%;
+  transform: translate(-20px,-20px) rotate(45deg);
+  position: absolute;
+  z-index: 2;
+}
+
+
+.carousel-caption h1{
+  font-family: @sans-serif!important;
 }

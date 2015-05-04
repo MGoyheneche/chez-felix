@@ -62,19 +62,24 @@ mixin article(arg)
             //.article-illu.hidden-xs
           //if i == 2
             //img.article-illu-map.hidden-xs
-          p.mb-30 #{val}
+          p.mb-30.text-resume #{val}
     .row.mb-30
       .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
         h2 Oeuvres <small>célèbres</small>
         h3.nopadding Nos voies
-    .row.mb-30
+    .row
       .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.article-illu-expo(style="background-image:url('"+arg.photos[0].url +"')")
     .row.mb-15
-      .mb-30.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2= arg.resume[2] 
+      .square-img
+      .mb-30.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-resume= arg.resume[2] 
       .article-illu-expo-sub.col-sm-4.col-sm-offset-2(style="background-image:url('"+arg.photos[1].url +"')")
       .article-illu-expo-sub.col-sm-4(style="background-image:url('"+arg.photos[2].url +"')")
-      .col-sm-4.col-sm-offset-2 <h3> Secret <small> perdu </small> </h3> <p>#{arg.resume[1]}</p>
-      .col-sm-4 <h3> Jeunesse <small> abandonnée </small> </h3> <p>#{arg.resume[1]}</p>
+      .col-sm-4.col-sm-offset-2 
+        h3.ml-15 Secret <small> perdu </small>
+        p.text-resume-pad30 #{arg.resume[1]}
+      .col-sm-4
+        h3.ml-15 Jeunesse <small> abandonnée </small>
+        p.text-resume-pad30 #{arg.resume[1]}
     .row.mb-30
       .col-xs-12.col-sm-10.col-sm-offset-1.text-right.col-md-8.col-md-offset-2
         .article-maj Mise à jour le
@@ -123,7 +128,7 @@ mixin lastArticles()
             isLastArticles: true
           })
     .row.text-center.mb-45
-      a.btn.btn-default.btn-lg(href='/blog') Blog
+      a.btn.btn-default.btn-lg.btn-theme(href='/blog') Blog
       
 mixin carousel(args)
   - var classLastArticles = '';
@@ -142,7 +147,7 @@ mixin carousel(args)
       if !args.isLastArticles
         .container
           .row
-            .col-sm-offset-1.col-md-offset-2.article-label Photographie
+            ///.col-sm-offset-1.col-md-offset-2.article-label Photographie
       - var classItem = "active";
       each val, i in args.photos
         if i > 0
