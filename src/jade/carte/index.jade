@@ -1,0 +1,238 @@
+include ./functions.jade
+
+extends ../shared/layout.jade
+link(rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css")
+
+block title
+  title Chez Felix - la Carte
+
+block content
+  .row.img-fromage
+    h1.margin-15 La Carte
+  .bigcontainer
+    .container
+      
+      .row
+        .col-md-12
+          .title
+            ul.nav.nav-pills
+              li.active
+                a(href="#a_la_carte", data-toggle="pill", role="pill") A la Carte
+              li
+                a(href="#menu", data-toggle="pill", role="pill") Menu
+              li
+                a(href="#a_emporter", data-toggle="pill", role="pill") A Emporter
+                <i class="fa fa-desktop fa-4x"></i>
+
+      .row
+        #a_la_carte.content.tab-pane.fade.in.active(role="tab-pannel")
+          .col-md-6.col1
+            h2 Fromages
+            .dropdown
+              ul
+                li
+                  +typeName("Pâtes Molles")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Pâtes Fraîches")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Pâtes Pressées")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Pâtes Dures")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Pâtes Persillées")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Pâtes Fondues")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+
+          .col-md-6.col1
+            h2 Accompagnements
+            .dropdown
+              ul
+                li
+                  +typeName("Pains")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Charcuterie")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Salades")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Fruits")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Toppings")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Boissons")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+        
+        #menu.content.tab-pane.fade(role="tab-pannel")
+          .col-md-6.col1
+            h2 Plateaux de fromages
+            .dropdown
+              ul
+                li
+                  +typeName("Plateaux simples")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Plateaux fromages & garniture")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr 
+                li
+                  +typeName("Plateaux complets")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+          .col-md-6.col1
+            h2 Salades
+            .dropdown
+              ul
+                li
+                  +typeName("Salades composées")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Salades & légumes")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+
+        #a_emporter.content.tab-pane.fade(role="tab-pannel")
+          .col-md-6.col1
+            h2 Plateaux de fromages
+            .dropdown
+              ul
+                li
+                  +typeName("Plateaux simples")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Plateaux fromages & garniture")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr 
+                li
+                  +typeName("Plateaux complets")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+          .col-md-6.col1
+            h2 Formules
+            .dropdown
+              ul
+                li
+                  +typeName("Formule plateau de fromages")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr
+                li
+                  +typeName("Formule salade")
+                  ul.dropdown-menu
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                    +product("Camembert","#", "rôti aux herbes et son pain de campagne", "19,00€")
+                li 
+                  hr 
+                   
+        
+
+
+      
