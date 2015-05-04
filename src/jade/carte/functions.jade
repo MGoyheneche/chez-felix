@@ -1,10 +1,12 @@
 mixin typeName(type_name)
-  .dropdown-toggle(data-toggle="dropdown").col-xs-12.h4= type_name
+  .dropdown-toggle(data-toggle="dropdown").col-md-12.h4= type_name
   i.fa.fa-angle-down
 
 mixin product(cheese_name, cheese_url, product_name, price)
   li(role="presentation")
-    .col-xs-8.col-sm-8 
+    .col-xs-12
+      img(src="http://www.leblogcuisine.fr/wp-content/uploads/2013/04/camembert-au-four.jpg" style="width: 230px;")
+    .col-xs-8
       a(href=cheese_url)= cheese_name
       p=product_name
-    .col-xs-3.col-sm-1= price
+    .col-xs-2= price
