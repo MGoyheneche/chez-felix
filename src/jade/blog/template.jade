@@ -69,9 +69,11 @@ mixin article(arg)
         h3.nopadding Nos voies
     .row
       .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.article-illu-expo(style="background-image:url('"+arg.photos[0].url +"')")
-    .row.mb-15
+    .row
       .square-img
-      .mb-30.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-resume= arg.resume[2] 
+      .padb-60.padt-60.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-resume= arg.resume[2] 
+    .row
+      .square-img
       .article-illu-expo-sub.col-sm-4.col-sm-offset-2(style="background-image:url('"+arg.photos[1].url +"')")
       .article-illu-expo-sub.col-sm-4(style="background-image:url('"+arg.photos[2].url +"')")
       .col-sm-4.col-sm-offset-2 

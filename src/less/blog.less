@@ -287,6 +287,7 @@ html,body {
     height: 250px;
   }
   background-position: center;
+  position: relative;
 }
 
 .article-illu-block{
@@ -334,7 +335,19 @@ html,body {
   z-index: 2;
 }
 
+.carousel-caption{
+  h1{
+    font-family: @sans-serif!important;
+    letter-spacing: -0.06em;
+    font-weight: 500;
+  }
+  
+  p{
+    text-transform: uppercase;
+    font-family: @sans-serif;
+  }
+}
 
-.carousel-caption h1{
-  font-family: @sans-serif!important;
+.article-illu-expo-sub{
+  z-index: 5;
 }
