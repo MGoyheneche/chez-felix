@@ -1,7 +1,19 @@
 footer {
   background: @white;
   color: @medium-grey;
-
+  
+  .copyright{
+    .hidden-xs;
+  }
+  
+  .container{
+    padding: 15px !important;
+  }
+  
+  ul{
+    .nopadding;
+  }
+  
   .logotype {
     width: 99px;
     background: none;
@@ -16,7 +28,19 @@ footer {
   a {
     color: @medium-grey;
   }
-
+  
+  .phone-wrapper{
+    @media (min-width: @screen-xs-min) and (max-width:@screen-sm-min) {
+      .mt-30;
+      .mb-30;
+      .text-center;
+    }
+  }
+  
+  .location{
+    color:@primary-color;
+  }
+  
   ul {
     list-style: none;
     line-height: 2em;
