@@ -11,7 +11,7 @@ block content
         a.link-reset(href="/blog/") BLOG
     .row.text-center
       .dropdown.visible-xs
-        a.btn.btn-default.btn-lg.dropdown-toggle(data-toggle="dropdown", aria-expanded="false", type="button") Affiner 
+        a.btn.btn-default.btn-lg.dropdown-toggle.btn-theme(data-toggle="dropdown", aria-expanded="false", type="button") Affiner 
           span.caret
         ul.dropdown-menu.filter.col-xs-6(role="menu")
           li
@@ -22,15 +22,15 @@ block content
           li.divider
           li
             a(href="") Coup de cœur
-    .row.hidden-xs
+    .row.hidden-xs.text-center
       .col-sm-4.col-md-2.col-md-offset-3
-          a.btn.btn-block.btn-default(href='') Sorties 
+          a.btn.btn-default.btn-theme(href='') Sorties 
       .col-sm-4.col-md-2
-          a.btn.btn-block.btn-default(href='') Fromages 
+          a.btn.btn-default.btn-theme(href='') Fromages 
       .col-sm-4.col-md-2
-          a.btn.btn-block.btn-default(href='') Coup de coeur 
+          a.btn.btn-default.btn-theme(href='') Coup de coeur 
           
-  .container
+  .container.article-list
     +articleList([{
                     title:"Ma douce Ville",
                     author:"Tatiana Iglov",
@@ -50,7 +50,7 @@ block content
                     author:"Jessie Pinkman",
                     start:"12/03",
                     end:"30/05",
-                    resume:"Jessie Pinkman est le phénomène de ces deux dernièrs mois. Il est l'homme phare du Jazzy-blues..",
+                    resume:"Jessie Pinkman est le phénomène de ces deux dernièrs mois. Il est l'homme du Jazzy-blues..",
                     label:"Musique",
                     photo_url:"http://www.nycguitarschool.com/wp-content/uploads/2013/03/bluesguitar.jpg",
                     article_url:"#",
@@ -73,8 +73,7 @@ block content
                     author:"Maitre Roche",
                     start:"12/01",
                     end:"",
-                    resume:"Maitre Roche nous fait parvenir l'un des plus précieux fromage de Lorraine, le Loraifort. A cet effet"+
-                           "...",
+                    resume:"Maitre Roche nous fait parvenir l'un des plus précieux fromage de Lorraine, le Loraifort ..",
                     label:"Fromage",
                     photo_url:"http://www.tourisme-aveyron.com/fr/decouvrir/incontournables/images/bandeau/roquefort/Photo-3.jpg",
                     article_url:"#",
@@ -98,7 +97,7 @@ block content
                     author:"Sophia Assag",
                     start:"02/09",
                     end:"02/10",
-                    resume:"Son groove hors du commun ne passera pas inaperçu. Apaisant et scintillant, venez apppréciez ...",
+                    resume:"Son groove hors du commun ne passera pas inaperçu. Apaisant et scintillant, venez  ...",
                     label:"Musique",
                     photo_url:"http://img.over-blog-kiwi.com/0/32/11/24/201301/ob_271d197243be84016aaa3ad08f60fa9b_1-616-vinyl-hd.jpg",
                     article_url:"#",

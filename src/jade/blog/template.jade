@@ -8,21 +8,21 @@ mixin articleList(arg)
             .row.text-center
               .article-list-label= val.label
           .row.mb-15
-            .col-xs-8
+            .col-xs-8.padl-10
               div.article-list-title= val.title
               div.article-list-author= val.author
-            .col-xs-4.text-right
+            .col-xs-4.text-right.padr-10
               if val.start
                 span.article-list-date(title="Début dans 11 jours")= val.start
                   if val.start && val.end
-                    | -
+                    |  - 
               if val.end
                 span.article-list-date(title="Fin dans 3 semaines")= val.end
-          .mb-15.article-list-resume= val.resume
-          .mb-30
+          .mb-15.article-list-resume.pad-40.mb-30= val.resume
+          .mb-30.ml-15
             each v in val.tags
               a.btn.btn-default.article-list-tag= v
-          a.btn.btn-default.pull-right.mb-45(href="article.html") Lire la suite
+          a.btn.btn-default.pull-right.mb-45.btn-theme.mr-15(href="article.html") Lire la suite
 
 mixin test(arr)
   each val in arr
