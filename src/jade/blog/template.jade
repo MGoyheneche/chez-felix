@@ -141,13 +141,6 @@ mixin carousel(args)
   if args.isLastArticles
     - classLastArticles = 'carousel-last-articles hidden-sm hidden-xs'
   div(class ="carousel slide #{classLastArticles}", id=args.id, data-ride='carousel', data-interval="3000")
-    // Indicators
-    ol.carousel-indicators
-      - var classItem = "active";
-      each val, i in args.photos
-        if i > 0
-          - classItem=""
-        li(class=classItem, data-target='#'+args.id, data-slide-to=i)
     // Wrapper for slides
     .carousel-inner(role='listbox')
       if !args.isLastArticles
