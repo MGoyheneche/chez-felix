@@ -13,4 +13,38 @@
   p{
     .mb-30;
   }
+  
+  .circle-cheese-1,.circle-cheese-2,.circle-cheese-3{
+    .hidden-xs;
+    position: absolute;
+    background-color: @background-color-html;
+  }
+  
+  .circle-cheese-1{
+    @size:40px;
+    border-radius: @size;
+    width: @size;
+    height: @size;
+    margin-top: -90px !important;
+    transform: translate(0,@size/2);
+    margin-left: 10% !important;
+  }
+  
+  .circle-cheese-2{
+    @size:10px;
+    border-radius: @size;
+    width: @size;
+    height: @size;
+    margin-left: 75% !important;
+    margin-top: 8%;  
+  }
+  
+  .circle-cheese-3{
+      @size:40px;
+      border-radius: @size;
+      width: @size;
+      height: @size;
+      margin-top: 18%;
+      margin-left: -80px;
+  }
 }
