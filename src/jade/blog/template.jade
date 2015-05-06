@@ -1,12 +1,13 @@
 mixin articleList(arg)
   //just for dev purposes
+  - var cpt = 0;
   .row
     each val in arg
+      - ++cpt;
       .col-xs-12.col-sm-6.col-md-4.mb-30
         .mb-45
           .article-list-bg.col-xs-12.mb-30.text-center(style!="background-image: url("+val.photo_url+")")
-            .row.text-center
-              .article-list-label= val.label
+            .article-list-label= val.label
           .row.mb-15
             .col-xs-8.padl-10
               div.article-list-title= val.title
@@ -19,10 +20,10 @@ mixin articleList(arg)
               if val.end
                 span.article-list-date(title="Fin dans 3 semaines")= val.end
           .mb-15.article-list-resume.pad-40.mb-30= val.resume
-          .mb-30.ml-15
+          .mb-30.ml-15.mr-15
             each v in val.tags
               a.btn.btn-default.article-list-tag= v
-          a.btn.btn-default.pull-right.mb-45.btn-theme.mr-15(href="article.html") Lire la suite
+          a.btn.btn-sm.btn-default.pull-right.mb-45.btn-theme.mr-15(href="article.html") Lire la suite
 
 mixin test(arr)
   each val in arr
@@ -30,43 +31,45 @@ mixin test(arr)
         
 mixin article(arg)
   .container
-    .row.mb-15
-      .col-xs-8.col-sm-5.col-sm-offset-1.col-md-4.col-md-offset-2
-        div.article-title= arg.title
-        div.article-author= arg.author
-      .col-xs-4.col-sm-5.text-right.col-md-4
-        if arg.start
-          div.article-date= arg.start
-        if arg.end
-          div.article-date= arg.end
-  .container-fluid
-    .row.mb-30
-      +carousel({
-        id:"preview",
-        photos: arg.photos
-      })      
-  .container
-    .row.mb-30
-      .col-xs-6.col-sm-5.col-sm-offset-1.col-md-4.col-md-offset-2
-        div Posté le 
-          span.article-date #{arg.publication_info.parution.date}
-        div 
-          span.article-hour #{arg.publication_info.parution.hour}
-      .col-xs-6.col-sm-5.text-right.article-author.col-md-4
-        div #{arg.publication_info.author}
-    .row.mb-30
+    .row
+      .col-xs-12.article-presentation
+        .circle-cheese-1
+        .circle-cheese-2
+        .circle-cheese-3
+        .filter-primary-color
+          .article-presentation-text.col-xs-10.col-xs-offset-1
+            h1= arg.title
+            p La talentueuse photographe Tatiana Iglov est viendra témoigner de son expérience en tant que reporter de guerre.
+            p.blockquote  "J'ai traversé les champs de bataille et les coeurs des populations meurtries par la détresse"
+            div.pull-right
+              p.schedule.nopadding Paru le #{arg.publication_info.parution.date} - #{arg.publication_info.parution.hour}
+              p.schedule.noppading #{arg.publication_info.author}
+  .container.back-white
+    .row.mt-45
+      .col-xs-12
+        .col-xs-8.col-xs-offset-2
+          .row.text-center
+            .clock
+            p.mt-30.event-schedule  Du 2 Avril au 10 Avril
+            p.event-schedule A l'arrière salon
+            
+            
       each val,i in arg.resume
-        .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
-          if i == 0
-            h2.mb-30 Bio <small>graphie</small>
-            //.article-illu.hidden-xs
-          //if i == 2
-            //img.article-illu-map.hidden-xs
-          p.mb-30.text-resume #{val}
-    .row.mb-30
+        .col-xs-12.wrapper-text-resume
+          .col-xs-8.col-xs-offset-2.text-resume
+            if i == 0
+              h2.mb-45.mt-30 Bio <small>graphie</small>
+            p.nomargin #{val}
+      .col-xs-10.col-xs-offset-1.citation 
+        p Ce qui me passionne c'est  de voir la réalité de mes propres yeux. Aider les populations en guerre via mon objectif, est ma seule raison d'être. Soutenir, aider, soigner, apaiser ces pauvres gens, sont les actes de demain.  
+        p.author.pull-right Tatiana Iglov
+  .container.back-white
+    .row.mb-30.mt-60
+      .col-xs-10.col-xs-offset-1
+        .article-illu-expo(style= "background:url(/images/blog/war.jpg)")
+    .row.mb-30.mt-60
       .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
         h2 Oeuvres <small>célèbres</small>
-        h3.nopadding Nos voies
     .row
       .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.article-illu-expo(style="background-image:url('"+arg.photos[0].url +"')")
     .row
@@ -77,11 +80,11 @@ mixin article(arg)
       .article-illu-expo-sub.col-sm-4.col-sm-offset-2(style="background-image:url('"+arg.photos[1].url +"')")
       .article-illu-expo-sub.col-sm-4(style="background-image:url('"+arg.photos[2].url +"')")
       .col-sm-4.col-sm-offset-2 
-        h3.ml-15 Secret <small> perdu </small>
-        p.text-resume-pad30 #{arg.resume[1]}
+        .text-resume-wrapper
+          p.text-resume-pad30 #{arg.resume[1]}
       .col-sm-4
-        h3.ml-15 Jeunesse <small> abandonnée </small>
-        p.text-resume-pad30 #{arg.resume[1]}
+        .text-resume-wrapper
+          p.text-resume-pad30 #{arg.resume[1]}
     .row.mb-30
       .col-xs-12.col-sm-10.col-sm-offset-1.text-right.col-md-8.col-md-offset-2
         .article-maj Mise à jour le

@@ -5,11 +5,14 @@ block title
   title Chez Felix - Blog
 
 block content
-  .container.mb-45
+  .container
     .row
-      h1.text-center.mb-30 
-        a.link-reset(href="/blog/") BLOG
-    .row.text-center
+      .jumbotron
+        .circle-cheese-1
+        .circle-cheese-2
+        h1 Le blog, lieu de toutes les passions.
+        p Des événements exceptionnels sont organisés pour vous et votre famille.
+    .row.text-center.mb-30.mt-30
       .dropdown.visible-xs
         a.btn.btn-default.btn-lg.dropdown-toggle.btn-theme(data-toggle="dropdown", aria-expanded="false", type="button") Affiner 
           span.caret
@@ -22,13 +25,15 @@ block content
           li.divider
           li
             a(href="") Coup de cœur
-    .row.hidden-xs.text-center
-      .col-sm-4.col-md-2.col-md-offset-3
-          a.btn.btn-default.btn-theme(href='') Sorties 
-      .col-sm-4.col-md-2
-          a.btn.btn-default.btn-theme(href='') Fromages 
-      .col-sm-4.col-md-2
-          a.btn.btn-default.btn-theme(href='') Coup de coeur 
+    .row.hidden-xs.text-center.filter-items.mb-45
+      .circle-left
+      .col-sm-8.col-sm-offset-2
+        .col-sm-4
+            a(href='') Sorties 
+        .col-sm-4
+            a(href='') Fromages 
+        .col-sm-4
+            a(href='') Coup de coeur 
           
   .container.article-list
     +articleList([{
@@ -91,6 +96,18 @@ block content
                     article_url:"#",
                     parution_date:"10/01/15",
                     tags:["Sorties","Architecture", "Comtemporain"]
+                  },
+                  {
+                    title:"Flux glacial",
+                    author:"Sophia Assag",
+                    start:"02/09",
+                    end:"02/10",
+                    resume:"Son groove hors du commun ne passera pas inaperçu. Apaisant et scintillant, venez  ...",
+                    label:"Musique",
+                    photo_url:"http://img.over-blog-kiwi.com/0/32/11/24/201301/ob_271d197243be84016aaa3ad08f60fa9b_1-616-vinyl-hd.jpg",
+                    article_url:"#",
+                    parution_date:"10/01/15",
+                    tags:["Sorties","Ambiance"]
                   },
                   {
                     title:"Flux glacial",
