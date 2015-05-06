@@ -41,9 +41,9 @@ mixin article(arg)
             h1= arg.title
             p La talentueuse photographe Tatiana Iglov est viendra témoigner de son expérience en tant que reporter de guerre.
             p.blockquote  "J'ai traversé les champs de bataille et les coeurs des populations meurtries par la détresse"
-            div.pull-right
-              p.schedule.nopadding Paru le #{arg.publication_info.parution.date} - #{arg.publication_info.parution.hour}
-              p.schedule.noppading #{arg.publication_info.author}
+            div.pull-right  
+              p.schedule.nopadding Paru le <strong> #{arg.publication_info.parution.date} - #{arg.publication_info.parution.hour} </strong>
+              p.schedule.pull-right <em> #{arg.publication_info.author}</em>
   .container.back-white
     .row.mt-45
       .col-xs-12
@@ -64,9 +64,10 @@ mixin article(arg)
         p Ce qui me passionne c'est  de voir la réalité de mes propres yeux. Aider les populations en guerre via mon objectif, est ma seule raison d'être. Soutenir, aider, soigner, apaiser ces pauvres gens, sont les actes de demain.  
         p.author.pull-right Tatiana Iglov
   .container.back-white
-    .row.mb-30.mt-60
-      .col-xs-10.col-xs-offset-1
-        .article-illu-expo(style= "background:url(/images/blog/war.jpg)")
+    .row.mb-30.mt-15
+      .col-xs-12.col-sm-10.col-sm-offset-1
+        .square-img.square-right
+        .col-xs-12.article-illu-expo(style= "background:url(/images/blog/war.jpg)")
     .row.mb-30.mt-60
       .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
         h2 Oeuvres <small>célèbres</small>
