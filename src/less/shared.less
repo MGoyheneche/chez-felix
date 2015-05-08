@@ -64,3 +64,32 @@
   margin-top: 30%;
   margin-left: (-@size/2);
 }
+
+input::-webkit-input-placeholder {
+   color: rgba(0,5,143,.5);
+   text-transform: uppercase;
+}
+
+.placeholder(){
+    @font: @sans-serif;
+  
+    @color: @primary-color !important;
+    &::-webkit-input-placeholder {
+      color:@color;
+      font-family: @font;
+    }
+    &:-moz-placeholder {
+      color:@color;
+      font-family: @font;
+    }
+    &::-moz-placeholder {
+      color:@color;
+      font-family: @font;
+    }
+    &:-ms-input-placeholder {
+      color:@color;
+      font-family: @font;
+    }
+}
+
+.placeholder();

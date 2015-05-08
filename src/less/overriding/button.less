@@ -32,6 +32,7 @@
   background-color: transparent  !important;
 }
 
+
 .btn-default {
   color: @white;
   background-color: fade(@black, 30%);
@@ -42,4 +43,89 @@
     border-color: transparent !important;
     background-color: fade(@black, 30%);
   }
+}
+
+.open > .dropdown-menu{
+  transition: all .25s ease-in-out;
+  opacity: 1;
+}
+
+.dropdown-menu{
+  transition: all .25s ease-in-out;
+  display: block;
+  opacity: 0;
+}
+
+
+.btn-filter{
+  >a{
+    padding-right: 30px;
+    padding-left: 30px;
+    border-radius: 2px;
+    color: @grey !important;
+    border: 1px @grey solid !important;
+    background-color: transparent  !important;
+    text-transform: uppercase;
+    font-weight: 600;
+
+    &:hover{
+      border-color: @primary-color !important;
+      color: @primary-color !important;
+    }
+  }
+  ul{
+    font-family: @serif;
+    transition:all 0.8;
+    li{
+      .text-center;
+    }
+    li.divider{
+      background-color: @primary-color;
+    }
+    a{
+      padding:15px !important;
+      color: @grey;
+      &:hover{
+        color: @primary-color;
+      }
+    }
+  }
+}
+
+.btn-search{
+   input{
+    color:@grey;
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 3px;
+    border: 1px @primary-color solid;
+    margin-right: -40px;
+    opacity: 0;
+    width: 0;
+    transition: all .25s;
+  }
+  &:hover input, input:focus{
+    margin-right: 0px;
+    width: 200px;
+    opacity: 1;
+    transition: all .25s;
+  }
+}
+
+.btn-search-icon{
+  padding-right: 30px;
+  padding-left: 30px;
+  border-radius: 2px;
+  color: @grey !important;
+  border: 1px @grey solid !important;
+  background-color: transparent  !important;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  &:hover{
+    border-color: @primary-color !important;
+    color: @primary-color !important;
+  }
+  padding-left: 15px !important;
+  padding-right: 15px !important;
 }

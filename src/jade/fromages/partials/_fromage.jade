@@ -1,14 +1,31 @@
-mixin fromage(title, img, milk, dough, location, maker, description)
-  article.col-md-6
-    .panel.panel-default
-      .panel-heading
-        .cover
-          img(src=img)
-      .panel-body
-        .content
+mixin fromage(title, img, milk, dough, location, maker, description, price)
+    article.row
+      .cover.col-md-5
+        img(src=img)
+      .col-md-7
+        .content.mb-45
+          span.price= price + "€"
           h1= title
-          .milk= milk
-          .dough= dough
-          .location= location
-          .maker= maker
+          hr.thickUp.mt-5
           p= description
+          hr.full-width.mb-15.mt-30
+          .mb-15
+            col-md-6.label= milk
+            col-md-6.label= dough
+
+mixin lastFromages(title, img, milk, dough, location, maker, description, price)
+    article.col-xs-12.col-md-6
+      .col-xs-12.col-sm-5
+        .cover
+          img.img-full-height.img-responsive(src=img)
+      .col-xs-12.col-sm-7
+        .content.mb-45
+          span.price= price + "€"
+          h1= title
+          hr.thickUp.mt-5.mb-30
+          h2 Affinage
+          p.old.mb-30 6 mois
+          h2 Région
+          p.region Plougastel, Normandie
+          .mb-15.mt-15
+            col-md-6.label= milk

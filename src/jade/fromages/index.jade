@@ -4,83 +4,82 @@ extends ./../shared/layout.jade
 
 block content
 
-  .container
+  .container.back-white
     .row
       .jumbotron
         .circle-cheese-1
         .circle-cheese-2
-        h1 Entrée, plat ou dessert, tout est fait maison.
-        p Toutes nos recettes sont crées dans notre cuisine avec des produits issus de l'agriculture biologique.
-    .filter
-      .navbar.navbar-default.col-md-12
-        ul.nav.navbar-nav      
-          li.dropdown
-            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-              | Lait 
-              span.caret
-            ul.dropdown-menu(role='menu')
-              li
-                a(href='#') Action    
-              li
-                a(href='#') Another action
-              li
-                a(href='#') Something else here
-          li.dropdown
-            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-              | Pâtes 
-              span.caret
-            ul.dropdown-menu(role='menu')
-              li
-                a(href='#') Action    
-              li
-                a(href='#') Another action
-              li
-                a(href='#') Something else here
+        h1 Entrée, plat ou dessert, <br/> tout est fait maison.
+        p Toutes nos recettes sont créees dans notre cuisine avec des produits issus <br/> de l'agriculture biologique.
+    .row.text-container.search-tool.fromages-row
+      .col-md-12.mb-15.btn-filter
+        a.btn.btn-default.btn-sm.dropdown-toggle(data-toggle="dropdown", aria-expanded="false", type="button") Filtre 
+          span.caret
+        ul.dropdown-menu(role="menu")
+          li
+            a(href="") Cambembert
+          li.divider
+          li
+            a(href="") Comté
+          li.divider
+          li
+            a(href="") Roclochon
+        .search.pull-right.btn-search.hidden-xs
+          input(type='text',placeholder='Search')
+          a.btn.btn-default.btn-sm.btn-search-icon <span class='glyphicon glyphicon-search'>
+      .col-md-12.mb-30
+
+      .col-md-12.mb-30
+        hr.full-width
+    .row.fromages.last-fromages.text-container.fromages-row
+      +lastFromages(
+        "Camembert",
+        "/images/fromages/last1.jpg",
+        "Lait de vache",
+        "Pâte fleurie",
+        "Normandie", 
+        "Alan Loisuzk",
+        "Ce merveilleux fromage de brebis fondant, sera vous raviver après une dur journée de boulot. Venez découvrir et aprécier ce doux parfum de vallée. Alan Loisusk est un nouveau berger émergent outre atlantique. ",
+        20)
         
-          li.dropdown
-            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
-              | Région 
-              span.caret
-            ul.dropdown-menu(role='menu')
-              li
-                a(href='#') Action    
-              li
-                a(href='#') Another action
-              li
-                a(href='#') Something else here
-
-        form.navbar-form.navbar-left(role='search')
-          .form-group
-            input.form-control(type='text', placeholder='Search')      
-          button.btn.btn-default(type='submit') Chercher
-
-      
-    
-    .row
-      +fromage(
-        "Camembert de brebis",
-        "//placehold.it/350x150",
+      +lastFromages(
+        "Comte",
+        "/images/fromages/last2.jpg",
         "Lait de brebis",
         "Pâte fleurie",
         "Normandie", 
         "Alan Loisuzk",
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        "Ce merveilleux fromage de brebis fondant, sera vous raviver après une dur journée de boulot. Venez découvrir et aprécier ce doux parfum de vallée. Alan Loisusk est un nouveau berger émergent outre atlantique. ",
+        20)
+        
+    .row.fromages.text-container.fromages-row
+      +fromage(
+        "Camembert de brebis",
+        "/images/fromages/brebis.jpg",
+        "Lait de brebis",
+        "Pâte fleurie",
+        "Normandie", 
+        "Alan Loisuzk",
+        "Ce merveilleux fromage de brebis fondant, sera vous raviver après une dur journée de boulot. Venez découvrir et aprécier ce doux parfum de vallée. Alan Loisusk est un nouveau berger émergent outre atlantique. ",
+        20)
       
       +fromage(
         "Reblochon",
-        "//placehold.it/350x150",
-        "Lait de brebis",
-        "Pâte fleurie",
+        "/images/fromages/camembert.png",
+        "Lait de chèvre",
+        "Pâte douce",
         "Normandie", 
         "Alan Loisuzk",
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        "Ce merveilleux Reblochon de Savoie fera fondre votre palais de plaisir. Un enrobage frais et raffiné.Venez découvrir et aprécier ce doux parfum de vallée",
+        15.50)
         
       +fromage(
         "Comté",
-        "//placehold.it/350x150",
-        "Lait de brebis",
-        "Pâte fleurie",
+        "/images/fromages/comte.jpg",
+        "Lait de vache",
+        "Pâte amaende",
         "Normandie", 
         "Alan Loisuzk",
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        "Le comté le plus riche de cet année, il a du caractère, comme celui qui le goute. Entre les papilles et ce merveilleux comté du Jura, l'harmonie de l'un et de l'autre",
+        9.90)
   
