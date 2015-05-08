@@ -31,15 +31,16 @@ mixin test(arr)
         
 mixin article(arg)
   .container
-    .row
-      .col-xs-12.article-presentation
-        .circle-cheese-1
-        .circle-cheese-2
-        .circle-cheese-3
-        .filter-primary-color
-          .article-presentation-text.col-xs-10.col-xs-offset-1
-            h1= arg.title
-            p La talentueuse photographe Tatiana Iglov viendra témoigner de son expérience en tant que reporter de guerre.
+      .jumbotron.article-presentation
+        .row
+          .circle-cheese-1
+          .circle-cheese-2
+          .circle-cheese-3
+          .col-md-10
+            h1.mt-45.mb-30= arg.title
+        .row
+          .col-md-10
+            p.lead La talentueuse photographe Tatiana Iglov viendra témoigner de son expérience en tant que reporter de guerre.
             p.blockquote  "J'ai traversé les champs de bataille et les coeurs des populations meurtries par la détresse"
             div.pull-right  
               p.schedule.nopadding Paru le <strong> #{arg.publication_info.parution.date} - #{arg.publication_info.parution.hour} </strong>
@@ -47,19 +48,15 @@ mixin article(arg)
   .container.back-white
     .row.mt-45
       .col-xs-12
-        .col-xs-8.col-xs-offset-2
-          .row.text-center
-            .clock
-            p.mt-30.event-schedule  Du 2 Avril au 10 Avril
-            p.event-schedule A l'arrière salon
-            
-            
+        .row.text-center
+          .clock
+          p.mt-30.event-schedule  Du 2 Avril au 10 Avril
+          p.event-schedule A l'arrière salon
       each val,i in arg.resume
-        .col-xs-12.wrapper-text-resume
-          .col-xs-8.col-xs-offset-2.text-resume
-            if i == 0
-              h2.mb-45.mt-30 Bio <small>graphie</small>
-            p.nomargin #{val}
+        .col-xs-12.col-md-8.col-md-offset-2.text-resume
+          if i == 0
+            h2.mb-45.mt-30 Bio <small>graphie</small>
+          p.nomargin #{val}
       .col-xs-10.col-xs-offset-1.citation 
         p Ce qui me passionne c'est  de voir la réalité de mes propres yeux. Aider les populations en guerre via mon objectif, est ma seule raison d'être. Soutenir, aider, soigner, apaiser ces pauvres gens, sont les actes de demain.  
         p.author.pull-right Tatiana Iglov
@@ -78,12 +75,12 @@ mixin article(arg)
       .padb-60.padt-60.col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-resume= arg.resume[2] 
     .row
       .square-img
-      .article-illu-expo-sub.col-sm-4.col-sm-offset-2(style="background-image:url('"+arg.photos[1].url +"')")
-      .article-illu-expo-sub.col-sm-4(style="background-image:url('"+arg.photos[2].url +"')")
-      .col-sm-4.col-sm-offset-2 
+      .article-illu-expo-sub.col-md-4.col-md-offset-2.col-sm-10.col-sm-offset-1(style="background-image:url('"+arg.photos[1].url +"')")
+      .article-illu-expo-sub.col-sm-10.col-sm-offset-1.col-md-4.col-md-offset-0(style="background-image:url('"+arg.photos[2].url +"')")
+      .col-md-4.col-md-offset-2
         .text-resume-wrapper
           p.text-resume-pad30 #{arg.resume[1]}
-      .col-sm-4
+      .col-md-4
         .text-resume-wrapper
           p.text-resume-pad30 #{arg.resume[1]}
     .row.mb-30

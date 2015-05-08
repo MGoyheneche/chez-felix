@@ -360,23 +360,26 @@ html,body {
 }
 
 .article-presentation{
-  background: url(http://www.lesphotographes.com/wp-content/uploads/2011/03/9.jpg);
+  background: linear-gradient(
+      fade(@primary-color,100%), 
+      fade(@primary-color,60%), 
+    ),url(http://www.lesphotographes.com/wp-content/uploads/2011/03/9.jpg);
+
   background-attachment: fixed;
   background-size: cover;
-  height: 250px;
-  @media screen and (min-width: @screen-xs-min){
-    min-height: 300px;
-    height: 300px;
-  }
-  
-  @media screen and (min-width: @screen-sm-min){
-    min-height: 350px;
-    height: 350px;
-  }
-  @media screen and (min-width: @screen-lg-min){
-    min-height: 500px;
-    height: 500px;
-  }
+//  @media screen and (min-width: @screen-xs-min){
+//    min-height: 300px;
+//    height: 300px;
+//  }
+//  
+//  @media screen and (min-width: @screen-sm-min){
+//    min-height: 350px;
+//    height: 350px;
+//  }
+//  @media screen and (min-width: @screen-lg-min){
+//    min-height: 500px;
+//    height: 500px;
+//  }
   
   .schedule{
     font-family: @sans-serif;
@@ -385,9 +388,11 @@ html,body {
 }
 
 .filter-primary-color{
-  background-color: fade(@primary-color, 85%);
-  width:100%;
-  height: 100%;
+  position: absolute;
+  background-color:fade(@primary-color, 85%);
+  width:100% !important;
+  height: 100% !important;
+  z-index: 100 !important;
 }
 
 
